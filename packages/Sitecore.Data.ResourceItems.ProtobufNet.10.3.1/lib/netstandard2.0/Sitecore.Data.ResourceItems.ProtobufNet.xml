@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.Data.ResourceItems.ProtobufNet</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Constants">
+            <summary>
+            Represents well known values.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Constants.ResourceLoaderLogTextPrefix">
+            <summary>Gets the resource loader log text prefix.</summary>
+        </member>
+        <member name="F:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Constants.DatFileExtension">
+            <summary>
+            The dat file extension.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ChildrenDataSet">
+            <summary>
+            Children data set.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ChildrenDataSet.#ctor(Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemDefinitions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ChildrenDataSet" /> class.
+            </summary>
+            <param name="definitionsDictionary">The definitions dictionary.</param>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.FieldsData">
+            <summary>
+            Fields data set.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemDefinitions">
+            <summary>
+            Item definitions.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemDefinitions.#ctor(Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemRecord[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemDefinitions" /> class.
+            </summary>
+            <param name="items">The items.</param>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemLanguagesData">
+            <summary>
+            Item languages data.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemRecord">
+            <summary>
+            Item record.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemRecord.ID">
+            <summary>Gets or sets the identifier.</summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemRecord.Name">
+            <summary>Gets or sets the name.</summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemRecord.ParentID">
+            <summary>Gets or sets the parent identifier.</summary>
+            <value>The parent identifier.</value>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemRecord.TemplateID">
+            <summary>Gets or sets the template identifier.</summary>
+            <value>The template identifier.</value>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemRecord.MasterID">
+            <summary>Gets or sets the master identifier.</summary>
+            <value>The master identifier.</value>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsByTemplateDataSet">
+            <summary>
+            Items by template data set.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsByTemplateDataSet.#ctor(Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemDefinitions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsByTemplateDataSet" /> class.
+            </summary>
+            <param name="definitionsDictionary">The definitions dictionary.</param>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsData">
+            <summary>
+            Items data.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsData.Definitions">
+            <summary>Gets or sets the definitions.</summary>
+            <value>The definitions.</value>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsData.SharedData">
+            <summary>Gets or sets the shared data.</summary>
+            <value>The shared data.</value>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsData.LanguageData">
+            <summary>Gets or sets the language data.</summary>
+            <value>The language data.</value>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsDataSet">
+            <summary>
+            Items data set.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsDataSet.#ctor(Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsDataSet" /> class.
+            </summary>
+            <param name="itemsData">The items data.</param>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsDataSet.Children">
+            <summary>Gets the children.</summary>
+            <value>The children.</value>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsDataSet.Definitions">
+            <summary>Gets the definitions.</summary>
+            <value>The definitions.</value>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsDataSet.ItemsByTemplate">
+            <summary>Gets the items by template.</summary>
+            <value>The items by template.</value>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsDataSet.LanguageData">
+            <summary>Gets the language data.</summary>
+            <value>The language data.</value>
+        </member>
+        <member name="P:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsDataSet.SharedData">
+            <summary>Gets the shared data.</summary>
+            <value>The shared data.</value>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsLanguagesData">
+            <summary>
+            Items language data.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsLanguagesData.TryGetValue(System.Guid,Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemLanguagesData@)">
+            <summary>Tries the get value.</summary>
+            <param name="itemId">The item identifier.</param>
+            <param name="item">The item language data.</param>
+            <returns>true - items dat was found, false - not found.</returns>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsLanguagesData.TryGetValue(System.Guid)">
+            <summary>Tries the get value.</summary>
+            <param name="itemId">The item identifier.</param>
+            <returns>The item language data.</returns>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsSharedData">
+            <summary>
+            Items shared data.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsSharedData.TryGetValue(System.Guid)">
+            <summary>Tries the get value.</summary>
+            <param name="itemId">The item identifier.</param>
+            <returns>
+            Shared fields dictionary.
+            </returns>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.VersionsData">
+            <summary>
+            Versions data.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.FileHelper">
+            <summary>
+            Helper class for working with files.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.FileHelper.GetFileNamesToLoad(System.Collections.Generic.IEnumerable{System.String},System.String,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Gets the file names to load.
+            </summary>
+            <param name="filePaths">The file paths.</param>
+            <param name="resourceFileExtension">The resource file extension.</param>
+            <param name="logger">The logger.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.IResourceLoader">
+            <summary>
+            Represents resource loading functionality.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.IResourceLoader.LoadFromFiles(System.Collections.Generic.IEnumerable{System.String},System.String,System.Collections.Generic.IReadOnlyDictionary{System.Guid,System.String})">
+            <summary>Loads items data set from files.</summary>
+            <param name="filePaths">The file paths.</param>
+            <param name="resourceFileExtension">The resource file extension.</param>
+            <param name="defaultFieldValues">The default field values.</param>
+            <returns>Items data set.</returns>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceBuilder">
+            <inheritdoc />
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceBuilder.Serialize(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceBuilder.AddItem(Sitecore.Data.ResourceItems.Abstractions.IResourceItem)">
+            <inheritdoc />
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceLoader">
+            <summary>
+            Resource loader class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceLoader.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceLoader" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceLoader.#ctor(Microsoft.Extensions.Logging.ILogger,Sitecore.Data.ResourceItems.Abstractions.IFileDeserializer{Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsData})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceLoader" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="fileDeserializer">The file loader.</param>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceLoader.#ctor(Microsoft.Extensions.Logging.ILogger,Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufItemsMerger,Sitecore.Data.ResourceItems.Abstractions.IFileDeserializer{Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsData})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceLoader" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="itemsMerger">The items merger.</param>
+            <param name="fileDeserializer">The file loader.</param>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceLoader.LoadFromFiles(System.Collections.Generic.IEnumerable{System.String},System.String,System.Collections.Generic.IReadOnlyDictionary{System.Guid,System.String})">
+            <summary>Loads items data set from files.</summary>
+            <param name="filePaths">The file paths.</param>
+            <param name="resourceFileExtension">The resource file extension.</param>
+            <param name="defaultFieldValues">The default field values.</param>
+            <returns>Items data set.</returns>
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ProtobufResourceLoader.LoadFromStream(System.IO.Stream,System.Collections.Generic.IReadOnlyDictionary{System.Guid,System.String},Sitecore.Data.DataProviders.ReadOnly.Protobuf.Data.ItemsDataSet)">
+            <summary>
+            Loads from stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="defaultFieldValues">The default field values.</param>
+            <param name="initialDataSet">The initial data set.</param>
+        </member>
+        <member name="T:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ResourceBuilderFactory">
+            <summary>
+            Factory for creating <see cref="T:Sitecore.Data.ResourceItems.Abstractions.IResourceBuilder"/> instance.
+            </summary>
+            <seealso cref="T:Sitecore.Data.ResourceItems.Abstractions.IResourceBuilderFactory" />
+        </member>
+        <member name="M:Sitecore.Data.DataProviders.ReadOnly.Protobuf.ResourceBuilderFactory.Create">
+            <summary>
+            Creates this instance.
+            </summary>
+            <returns>
+            The instance that implements <see cref="T:Sitecore.Data.ResourceItems.Abstractions.IResourceBuilder" />.
+            </returns>
+        </member>
+    </members>
+</doc>

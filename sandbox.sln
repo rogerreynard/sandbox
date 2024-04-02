@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{B0DB76C1-277D-4C5B-9486-D9804B78D7D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{985427A4-8718-4994-A8BB-E99EF6D618B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{A5C37B3C-7930-43C0-AE21-5E50C0AB4140}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Website", "Website", "{E036128F-4F06-4111-BDC7-783342B71545}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Website", "src\Project\Website\code\Project.Website.csproj", "{32970640-DA4C-4646-A55C-FF3EE037B779}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{C8078807-58A5-4486-B383-F2771619FBF1}"
+	ProjectSection(SolutionItems) = preProject
+		gulp-config.js = gulp-config.js
+		gulpfile.js = gulpfile.js
+		src\Leprechaun.config = src\Leprechaun.config
+		package.json = package.json
+		src\sitecore.json = src\sitecore.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation.ImageMetadataGenerator", "src\Foundation\ImageMetadataGenerator\code\Foundation.ImageMetadataGenerator.csproj", "{01D3F301-B828-4F3F-8E0C-B463ECCFCAE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Generation", "{324390A4-EA7A-48F8-A51A-4E963D102775}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\SimpleWrapper.csx = Scripts\SimpleWrapper.csx
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32970640-DA4C-4646-A55C-FF3EE037B779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32970640-DA4C-4646-A55C-FF3EE037B779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32970640-DA4C-4646-A55C-FF3EE037B779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32970640-DA4C-4646-A55C-FF3EE037B779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D3F301-B828-4F3F-8E0C-B463ECCFCAE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D3F301-B828-4F3F-8E0C-B463ECCFCAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D3F301-B828-4F3F-8E0C-B463ECCFCAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D3F301-B828-4F3F-8E0C-B463ECCFCAE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E036128F-4F06-4111-BDC7-783342B71545} = {A5C37B3C-7930-43C0-AE21-5E50C0AB4140}
+		{32970640-DA4C-4646-A55C-FF3EE037B779} = {E036128F-4F06-4111-BDC7-783342B71545}
+		{01D3F301-B828-4F3F-8E0C-B463ECCFCAE8} = {985427A4-8718-4994-A8BB-E99EF6D618B7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A48F66B-9F33-4EB9-8A43-C1DF9487A400}
+	EndGlobalSection
+EndGlobal

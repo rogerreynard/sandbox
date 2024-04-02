@@ -1,0 +1,15 @@
+{
+    "namespace": "ImageMetadataGenerator.Master",
+    "items": {
+        "includes": [
+            {
+                "name": "Templates",
+                "path": "/sitecore/templates/Modules/Image Metadata Generator"
+            },
+            {
+                "name": "System Modules",
+                "path": "/sitecore/system/Modules/Image Metadata Generator"
+            }
+        ]
+    }
+}

@@ -1,0 +1,32 @@
+﻿---
+ID: "5d4defbd-2e66-48fa-a6af-99a6f3c06a6d"
+Parent: "c789b020-19de-40bf-9bb3-1f600965dd99"
+Template: "acb5ac0f-fdc8-43f2-840f-69f0b069e32a"
+Path: /sitecore/system/Modules/Image Metadata Generator/Settings
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240322T173753Z
+    - ID: "66eb94fe-e0a1-40e9-ba60-c7423cd1a256"
+      Hint: Url
+      Value: "https://api.openai.com/v1/chat/completions"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2629e033-3b76-4942-9902-8b37af489f33"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240326T212732Z
+    - ID: "debb95ec-d1e1-456a-9da2-2a502d32c8a0"
+      Hint: API Key
+      Value: "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"
+    - ID: "f36e7244-909d-4d33-b59e-fd2ba9b485e3"
+      Hint: Detail
+      Value: "{D0098CEF-44ED-42A8-8290-EB4BB0EC41C9}"

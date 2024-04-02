@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.Data.ResourceItems.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.Data.ResourceItems.Abstractions.CachedFileDeserializer`1">
+            <summary>
+            Decorates file loader with precache functionality.
+            </summary>
+            <typeparam name="T">Type of deserialized object.</typeparam>
+            <seealso cref="T:Sitecore.Data.ResourceItems.Abstractions.IFileDeserializer`1" />
+        </member>
+        <member name="M:Sitecore.Data.ResourceItems.Abstractions.CachedFileDeserializer`1.#ctor(Sitecore.Data.ResourceItems.Abstractions.IFileDeserializer{`0},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Data.ResourceItems.Abstractions.CachedFileDeserializer`1"/> class.
+            </summary>
+            <param name="fileDeserializer">The file loader.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:Sitecore.Data.ResourceItems.Abstractions.CachedFileDeserializer`1.PreloadFiles(System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            Consume file for possible preloading.
+            </summary>
+            <param name="fileNames">Name of the files to consume.</param>
+            <param name="removeAfterRead">if set to <c>true</c> task will be removed from dictionary after reading file.</param>
+        </member>
+        <member name="M:Sitecore.Data.ResourceItems.Abstractions.CachedFileDeserializer`1.DeserializeFromFile(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Sitecore.Data.ResourceItems.Abstractions.Fields.SharedField">
+            <summary>
+            Shared field class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.Fields.SharedField.Id">
+            <summary>Gets or sets the identifier.</summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.Fields.SharedField.Value">
+            <summary>Gets or sets the value.</summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:Sitecore.Data.ResourceItems.Abstractions.Fields.UnversionedField">
+            <summary>
+            Unversioned field class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.Fields.UnversionedField.Id">
+            <summary>Gets or sets the identifier.</summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.Fields.UnversionedField.Value">
+            <summary>Gets or sets the value.</summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.Fields.UnversionedField.Language">
+            <summary>Gets or sets the language.</summary>
+            <value>The language.</value>
+        </member>
+        <member name="T:Sitecore.Data.ResourceItems.Abstractions.Fields.VersionedField">
+            <summary>
+            Versioned field class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.Fields.VersionedField.Id">
+            <summary>Gets or sets the identifier.</summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.Fields.VersionedField.Value">
+            <summary>Gets or sets the value.</summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.Fields.VersionedField.Version">
+            <summary>Gets or sets the version.</summary>
+            <value>The version.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.Fields.VersionedField.Language">
+            <summary>Gets or sets the language.</summary>
+            <value>The language.</value>
+        </member>
+        <member name="T:Sitecore.Data.ResourceItems.Abstractions.IFileDeserializer`1">
+            <summary>
+            Interface represents deserialize file functionality.
+            </summary>
+            <typeparam name="T">Type that should be archived by deserialization.</typeparam>
+        </member>
+        <member name="M:Sitecore.Data.ResourceItems.Abstractions.IFileDeserializer`1.DeserializeFromFile(System.String)">
+            <summary>
+            Deserializes from file.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns>The instance with deserialized content.</returns>
+        </member>
+        <member name="T:Sitecore.Data.ResourceItems.Abstractions.IResourceBuilder">
+            <summary>
+            Resource builder interface.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Data.ResourceItems.Abstractions.IResourceBuilder.Serialize(System.IO.Stream)">
+            <summary>Serializes the specified stream.</summary>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="M:Sitecore.Data.ResourceItems.Abstractions.IResourceBuilder.AddItem(Sitecore.Data.ResourceItems.Abstractions.IResourceItem)">
+            <summary>Adds the item.</summary>
+            <param name="resourceItem">The resource item.</param>
+        </member>
+        <member name="T:Sitecore.Data.ResourceItems.Abstractions.IResourceBuilderFactory">
+            <summary>
+            Describes functionality for creating <see cref="T:Sitecore.Data.ResourceItems.Abstractions.IResourceBuilder"/> instance.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Data.ResourceItems.Abstractions.IResourceBuilderFactory.Create">
+            <summary>
+            Creates this instance.
+            </summary>
+            <returns>The instance that implements <see cref="T:Sitecore.Data.ResourceItems.Abstractions.IResourceBuilder"/>.</returns>
+        </member>
+        <member name="T:Sitecore.Data.ResourceItems.Abstractions.IResourceItem">
+            <summary>
+            Resource item interface.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.IResourceItem.Id">
+            <summary>Gets the identifier.</summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.IResourceItem.Name">
+            <summary>Gets the name.</summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.IResourceItem.ParentId">
+            <summary>Gets the parent identifier.</summary>
+            <value>The parent identifier.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.IResourceItem.TemplateId">
+            <summary>Gets the template identifier.</summary>
+            <value>The template identifier.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.IResourceItem.MasterId">
+            <summary>Gets the master identifier.</summary>
+            <value>The master identifier.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.IResourceItem.SharedFields">
+            <summary>Gets the shared fields.</summary>
+            <value>The shared fields.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.IResourceItem.UnversionedFields">
+            <summary>Gets the unversioned fields.</summary>
+            <value>The unversioned fields.</value>
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.IResourceItem.VersionedFields">
+            <summary>Gets the versioned fields.</summary>
+            <value>The versioned fields.</value>
+        </member>
+        <member name="T:Sitecore.Data.ResourceItems.Abstractions.ResourceItem">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.ResourceItem.Id">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.ResourceItem.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.ResourceItem.ParentId">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.ResourceItem.TemplateId">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.ResourceItem.MasterId">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.ResourceItem.SharedFields">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.ResourceItem.UnversionedFields">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.Data.ResourceItems.Abstractions.ResourceItem.VersionedFields">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

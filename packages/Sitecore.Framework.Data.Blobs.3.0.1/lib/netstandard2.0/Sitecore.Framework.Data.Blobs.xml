@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.Framework.Data.Blobs</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.Framework.Data.Blobs.BlobStorage">
+            <summary>
+            Blob provider router class
+            Contains methods for get a blob provider
+            </summary>
+        </member>
+        <member name="F:Sitecore.Framework.Data.Blobs.BlobStorage.providers">
+            <summary>
+            List of supported providers
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.BlobStorage.#ctor(System.Collections.Generic.IEnumerable{Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderBase},Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderBase)">
+            <summary>
+            Returns a new instance of <see cref="T:Sitecore.Framework.Data.Blobs.BlobStorage"/> 
+            </summary>
+            <param name="blobProviders">List of supported providers</param>
+            <param name="defaultBlobProvider">Default provider</param>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobProviders is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when defaultBlobProvider is null</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.BlobStorage.GetDefaultBlobProvider``1">
+            <summary>
+            Gets the configured default blob provider for the given type T
+            </summary>
+            <typeparam name="T">Type of the default blob provider needed</typeparam>
+            <returns>Default blob provider for the type T</returns>
+            <exception>Throws <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobProviderException"/> when there is no default blob provider configured for the type T</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.BlobStorage.GetBlobProvider``1">
+            <summary>
+            Gets the blob provider for the given type T
+            </summary>
+            <typeparam name="T">Type of the blob provider needed</typeparam>
+            <returns>Blob provider for the type T</returns>
+            <exception>Throws <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobProviderException"/> when there is no blob provider configured for the type T</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.BlobStorage.GetBlobProvider``1(Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Gets the blob provider for the given type T which can handle given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/>
+            </summary>
+            <typeparam name="T">Type of the blob provider needed</typeparam>
+            <param name="identifier">BlobIdentifier to identify the supported provider</param>
+            <returns>>Blob provider for the type T which supports given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/></returns>
+            <exception>Throws <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobProviderException"/> when there is no blob provider configured for the type T 
+            which can handle the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/></exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobIdentifier is null</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.BlobStorage.GetBlobProviders``1">
+            <summary>
+            Returns a list of providers which are of type of <typeparamref name="T"/>
+            </summary>
+            <typeparam name="T">Type of the providers needed with thi smethod.</typeparam>
+            <returns>a list of providers which are of type of <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="T:Sitecore.Framework.Data.Blobs.BlobStorageExtensions">
+            <summary>
+            Common Blob Storage Extensions
+            Provides wrapper methods for clients to work with Blob Storages 
+            without concern about which blob provider to use
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.BlobStorageExtensions.CreateBlobIdentifier(Sitecore.Framework.Data.Blobs.BlobStorage)">
+            <summary>
+            Creates an new instance of the <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> supported by the provider
+            using configured default blob provider
+            </summary>
+            <param name="blobStorage"></param>
+            <returns>Instance of <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/></returns>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobStorage is null</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.BlobStorageExtensions.CreateBlobIdentifier(Sitecore.Framework.Data.Blobs.BlobStorage,System.Guid)">
+            <summary>
+            Creates an new instance of the <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> by
+            using configured default blob provider and given Guid
+            </summary>
+            <param name="blobStorage"></param>
+            <param name="guid"></param>
+            <returns>Instance of <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/></returns>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobStorage is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when guid is empty</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.BlobStorageExtensions.ToGuid(Sitecore.Framework.Data.Blobs.BlobStorage,Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Convert given instance of the <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> to valid Guid
+            using configured blob provide
+            </summary>
+            <param name="blobStorage"></param>
+            <param name="identifier"></param>
+            <returns>Instance of <see cref="T:System.Guid"/></returns>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobStorage is null</exception>
+        </member>
+        <member name="T:Sitecore.Framework.Data.Blobs.ExtensionsAsync.BlobStorageExtensionsAsync">
+            <summary>
+            Async Blob Storage Extensions
+            Provides wrapper methods for clients to work with Blob Storages 
+            without concern about which blob provider to use
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.ExtensionsAsync.BlobStorageExtensionsAsync.BlobExistsAsync(Sitecore.Framework.Data.Blobs.BlobStorage,Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Checks whether a blob exists in the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            using the blob provider which can handle the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="blobStorage"></param>
+            <param name="blobIdentifier">The identifier of the blob</param>
+            <returns>True if blob found, False if blob not found</returns>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobStorage is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobIdentifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when blobIdentifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.ExtensionsAsync.BlobStorageExtensionsAsync.GetBlobAsync(Sitecore.Framework.Data.Blobs.BlobStorage,Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Gets a blob from the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            using the blob provider which can handle the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="blobStorage">The identifier of the blob</param>
+            <param name="blobIdentifier"></param>
+            <returns>Blob of the given identifier as <see cref="T:System.IO.Stream"/></returns>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobStorage is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobIdentifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when blobIdentifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.ExtensionsAsync.BlobStorageExtensionsAsync.SetBlobAsync(Sitecore.Framework.Data.Blobs.BlobStorage,System.IO.Stream,Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Sets a blob to the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            using configured default blob provider
+            </summary>
+            <param name="blobStorage"></param>
+            <param name="stream">Blob as <see cref="T:System.IO.Stream"/></param>
+            <param name="blobIdentifier">The identifier of the blob</param>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobStorage is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when stream is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobIdentifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when blobIdentifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.ExtensionsAsync.BlobStorageExtensionsAsync.RemoveBlobAsync(Sitecore.Framework.Data.Blobs.BlobStorage,Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Removes a blob from the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            using the blob provider which can handle the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="blobStorage"></param>
+            <param name="blobIdentifier">The identifier of the blob</param>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobStorage is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobIdentifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when blobIdentifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.ExtensionsAsync.BlobStorageExtensionsAsync.CleanupOrphanBlobsAsync(Sitecore.Framework.Data.Blobs.BlobStorage)">
+            <summary>
+            Cleans up orphan blobs for all the providers of the given <see cref="T:Sitecore.Framework.Data.Blobs.BlobStorage"/>.
+            </summary>
+            <param name="blobStorage">The <see cref="T:Sitecore.Framework.Data.Blobs.BlobStorage"/> to clean up.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that is the result of the clean up.</returns>
+        </member>
+        <member name="T:Sitecore.Framework.Data.Blobs.ExtensionsSync.BlobStorageExtensionsSync">
+            <summary>
+            Sync Blob Storage Extensions
+            Provides wrapper methods for clients to work with Blob Storages 
+            without concern about which blob provider to use
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.ExtensionsSync.BlobStorageExtensionsSync.BlobExists(Sitecore.Framework.Data.Blobs.BlobStorage,Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Checks whether a blob exists in the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            using the blob provider which can handle the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="blobStorage"></param>
+            <param name="blobIdentifier">The identifier of the blob</param>
+            <returns>True if blob found, False if blob not found</returns>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobStorage is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobIdentifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when blobIdentifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.ExtensionsSync.BlobStorageExtensionsSync.GetBlob(Sitecore.Framework.Data.Blobs.BlobStorage,Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Gets a blob from the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            using the blob provider which can handle the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="blobStorage">The identifier of the blob</param>
+            <param name="blobIdentifier"></param>
+            <returns>Blob of the given identifier as <see cref="T:System.IO.Stream"/></returns>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobStorage is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobIdentifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when blobIdentifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.ExtensionsSync.BlobStorageExtensionsSync.SetBlob(Sitecore.Framework.Data.Blobs.BlobStorage,System.IO.Stream,Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Sets a blob to the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            using configured default blob provider
+            </summary>
+            <param name="blobStorage"></param>
+            <param name="stream">Blob as <see cref="T:System.IO.Stream"/></param>
+            <param name="blobIdentifier">The identifier of the blob</param>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobStorage is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when stream is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobIdentifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when blobIdentifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.ExtensionsSync.BlobStorageExtensionsSync.RemoveBlob(Sitecore.Framework.Data.Blobs.BlobStorage,Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Removes a blob from the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            using the blob provider which can handle the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="blobStorage"></param>
+            <param name="blobIdentifier">The identifier of the blob</param>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobStorage is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when blobIdentifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when blobIdentifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.ExtensionsSync.BlobStorageExtensionsSync.CleanupOrphanBlobs(Sitecore.Framework.Data.Blobs.BlobStorage)">
+            <summary>
+            Cleans up orphan blobs for all the providers of the given <see cref="T:Sitecore.Framework.Data.Blobs.BlobStorage"/>.
+            </summary>
+            <param name="blobStorage">The <see cref="T:Sitecore.Framework.Data.Blobs.BlobStorage"/> to clean up.</param>
+        </member>
+    </members>
+</doc>

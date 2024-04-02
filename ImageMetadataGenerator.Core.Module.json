@@ -1,0 +1,19 @@
+{
+    "namespace": "ImageMetadataGenerator.Core",
+    "items": {
+        "includes": [
+            {
+                "name": "Right-click Menu Item",
+                "path": "/sitecore/content/Applications/Content Editor/Context Menues/Default/Generate Metadata",
+                "database": "core",
+                "scope": "SingleItem"
+            },
+            {
+                "name": "Media Ribbon Menu Item",
+                "path": "/sitecore/content/Applications/Content Editor/Ribbons/Contextual Ribbons/Images/Media/Image/Generate Metadata",
+                "database": "core",
+                "scope": "SingleItem"
+            }
+        ]
+    }
+}

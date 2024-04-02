@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.Framework.Data.Blobs.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier">
+            <summary>
+            BlobIdentifier
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier.#ctor(System.String)">
+            <summary>
+            Returns a new instance of <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/>
+            </summary>
+            <param name="identifier">Blob Identifier string</param>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier.ToString">
+            <summary>
+            Returns the <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> as string
+            </summary>
+            <returns>String value of the <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/></returns>
+        </member>
+        <member name="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobProviderException">
+            <summary>
+            Exception class
+            Wraps the exception and messages as blob provider exception
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.BlobProviderException.#ctor(System.String)">
+            <summary>
+            Returns a new instance of <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobProviderException"/> 
+            </summary>
+            <param name="message">Exception message</param>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.BlobProviderException.#ctor(System.String,System.Exception)">
+            <summary>
+            Returns a new instance of <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobProviderException"/> 
+            </summary>
+            <param name="message">Exception message</param>
+            <param name="innerException">Inner exception</param>
+        </member>
+        <member name="T:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProvider">
+            <summary>
+            Sync interface for basic CRUD operations on Blob storages
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProvider.BlobExists(Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Checks whether a blob exists in the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="identifier">The identifier of the blob</param>
+            <returns>True if blob found, False if blob not found</returns>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when identifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when identifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProvider.GetBlob(Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Gets a blob from the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="identifier">The identifier of the blob</param>
+            <returns>Blob of the given identifier as <see cref="T:System.IO.Stream"/></returns>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when identifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when identifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProvider.SetBlob(System.IO.Stream,Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Sets a blob to the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="stream">Blob as <see cref="T:System.IO.Stream"/></param>
+            <param name="identifier">The identifier of the blob</param>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when stream is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when identifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when identifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProvider.RemoveBlob(Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Removes a blob from the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="identifier">The identifier of the blob</param>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when identifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when identifier is invalid</exception>
+        </member>
+        <member name="T:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderAsync">
+            <summary>
+            Async interface for basic CRUD operations on Blob storages
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderAsync.BlobExistsAsync(Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Checks whether a blob exists in the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="identifier">The identifier of the blob</param>
+            <returns>True if blob found, False if blob not found</returns>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when identifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when identifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderAsync.GetBlobAsync(Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Gets a blob from the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="identifier">The identifier of the blob</param>
+            <returns>Blob of the given identifier as <see cref="T:System.IO.Stream"/></returns>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when identifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when identifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderAsync.SetBlobAsync(System.IO.Stream,Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Sets a blob to the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="stream">Blob as <see cref="T:System.IO.Stream"/></param>
+            <param name="identifier">The identifier of the blob</param>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when stream is null</exception>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when identifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when identifier is invalid</exception>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderAsync.RemoveBlobAsync(Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Removes a blob from the blob storage for the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="identifier">The identifier of the blob</param>
+            <exception>Throws <see cref="T:System.ArgumentNullException"/> when identifier is null</exception>
+            <exception>Throws <see cref="T:System.InvalidOperationException"/> when identifier is invalid</exception>
+        </member>
+        <member name="T:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderBase">
+            <summary>
+            Base interface for Blob providers
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderBase.CanHandle(Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Checks whether the provider can handle the given <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> 
+            </summary>
+            <param name="identifier">The identifier</param>
+            <returns>True if can handle, False if not</returns>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderBase.CreateBlobIdentifier">
+            <summary>
+            Creates an new instance of the <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> supported by the provider
+            </summary>
+            <returns>Instance of <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/></returns>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderBase.CreateBlobIdentifier(System.Guid)">
+            <summary>
+            Creates an new instance of the <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> supported by the provider  using given guid
+            </summary>
+            <param name="guid"></param>
+            <returns>Instance of <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/></returns>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderBase.ToGuid(Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier)">
+            <summary>
+            Convert given instance of the <see cref="T:Sitecore.Framework.Data.Blobs.Abstractions.BlobIdentifier"/> to valid guid using supported provider
+            </summary>
+            <param name="identifier"></param>
+            <returns>Instance of <see cref="T:System.Guid"/></returns>
+        </member>
+        <member name="T:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderGarbageCollection">
+            <summary>
+            Sync interface for garbage collection operations on Blob storages
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderGarbageCollection.CleanupOrphanBlobs">
+            <summary>
+            Cleans up orphan blobs
+            </summary>
+        </member>
+        <member name="T:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderGarbageCollectionAsync">
+            <summary>
+            Async interface for garbage collection operations on Blob storages
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IBlobProviderGarbageCollectionAsync.CleanupOrphanBlobsAsync">
+            <summary>
+            Cleans up orphan blobs
+            </summary>
+        </member>
+        <member name="T:Sitecore.Framework.Data.Blobs.Abstractions.ILogger">
+            <summary>
+            An interface for error logging.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.ILogger.LogError(System.String,System.Exception)">
+            <summary>
+            Logs the error.
+            </summary>
+            <param name="message">The message to write to log.</param>
+            <param name="ex">The exception to write to log.</param>
+        </member>
+        <member name="T:Sitecore.Framework.Data.Blobs.Abstractions.IPagedListProvider">
+            <summary>
+            An interface for returning data page by page.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IPagedListProvider.GetNextPage(System.Int32)">
+            <summary>
+            Gets the next page.
+            </summary>
+            <param name="pageSize">A positive integer value that indicates the maximum number of results to be returned at a time.</param>
+            <returns>Returns IEnumerable of string which is data of next page.</returns>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IPagedListProvider.HasNextPage">
+            <summary>
+            Checks for availability of next page.
+            </summary>
+            <returns>Returns true, if there is next page.</returns>
+        </member>
+        <member name="M:Sitecore.Framework.Data.Blobs.Abstractions.IPagedListProvider.Reset">
+            <summary>
+            Reset the paged list to initial state.
+            </summary>
+        </member>
+    </members>
+</doc>
