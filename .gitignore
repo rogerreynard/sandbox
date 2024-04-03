@@ -10,3 +10,8 @@
 # Don't commit packages
 *.itempackage
 *.sicpackage
+
+.vs/sandbox
+node_modules/
+bin/
+obj/

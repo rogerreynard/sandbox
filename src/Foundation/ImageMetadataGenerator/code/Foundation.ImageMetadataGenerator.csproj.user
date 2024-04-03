@@ -9,7 +9,8 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
-    <NameOfLastUsedPublishProfile>C:\repos\sandbox\src\Foundation\ImageMetadataGenerator\code\Properties\PublishProfiles\Publish to sc103cm.rba.local.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\repos\sandbox\src\Foundation\ImageMetadataGenerator\code\Properties\PublishProfiles\Publish to cm.rba.local.pubxml</NameOfLastUsedPublishProfile>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
