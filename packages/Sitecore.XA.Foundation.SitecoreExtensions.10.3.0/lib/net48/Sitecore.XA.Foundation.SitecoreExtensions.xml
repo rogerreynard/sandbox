@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XA.Foundation.SitecoreExtensions</name>
+    </assembly>
+    <members>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Controls.YesNoForm.No">
+            <summary>Closes this dialog. Dialog value will be 'no'.</summary>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Controls.YesNoForm.OnLoad(System.EventArgs)">
+            <summary>Raises the load event.</summary>
+            <param name="e">
+            The instance containing the event data.
+            </param>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Controls.YesNoForm.Yes">
+            <summary>Closes this dialog. Dialog value will be 'yes'.</summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.SitecoreExtensions.CustomFields.FieldTypes.MultiRootTreeList">
+            <summary>
+            This field type is like a tree list, but you can specify more than one root item to select from (for example, videos or photos)
+            The data source roots are specified using pipe delimiting just like regular Sitecore Query language
+            </summary>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.CustomFields.FieldTypes.MultiRootTreeList.ParseDataContexts(Sitecore.Web.UI.HtmlControls.DataContext)">
+            <summary>
+            Parses multiple source roots into discrete data context controls (e.g. 'dataSource=/sitecore/content|/sitecore/media library')
+            </summary>
+            <param name="originalDataContext">The original data context the base control generated. We reuse some of its property values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.CustomFields.FieldTypes.MultiRootTreeList.CreateDataContext(Sitecore.Web.UI.HtmlControls.DataContext,System.String)">
+            <summary>
+            Creates a DataContext control for a given Sitecore path data source
+            </summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.DelayedInjectionBlock">
+            <summary>
+            Delegate script/resource/etc injection until the end of the page
+            <para>@via http://stackoverflow.com/a/14127332/1037948 and http://jadnb.wordpress.com/2011/02/16/rendering-scripts-from-partial-views-at-the-end-in-mvc/ </para>
+            </summary>
+        </member>
+        <member name="F:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.DelayedInjectionBlock.CACHE_KEY">
+            <summary>
+            Unique internal storage key
+            </summary>
+        </member>
+        <member name="F:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.DelayedInjectionBlock.UNIQUE_IDENTIFIER_KEY">
+            <summary>
+            Internal storage identifier for remembering unique/isOnlyOne items
+            </summary>
+        </member>
+        <member name="F:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.DelayedInjectionBlock.EMPTY_IDENTIFIER">
+            <summary>
+            What to use as internal storage identifier if no identifier provided (since we can't use null as key)
+            </summary>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.DelayedInjectionBlock.GetQueue(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Retrieve a context-aware list of cached output delegates from the given helper; uses the helper's context rather than singleton HttpContext.Current.Items
+            </summary>
+            <param name="helper">the helper from which we use the context</param>
+            <param name="identifier">optional unique sub-identifier for a given injection block</param>
+            <returns>list of delayed-execution callbacks to render internal content</returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.DelayedInjectionBlock._GetOrSet``1(System.Web.Mvc.HtmlHelper,``0,System.String)">
+            <summary>
+            Retrieve a context-aware list of cached output delegates from the given helper; uses the helper's context rather than singleton HttpContext.Current.Items
+            </summary>
+            <param name="helper">the helper from which we use the context</param>
+            <param name="defaultValue">the default value to return if the cached item isn't found or isn't the expected type; can also be used to set with an arbitrary value</param>
+            <param name="identifier">optional unique sub-identifier for a given injection block</param>
+            <returns>list of delayed-execution callbacks to render internal content</returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.DelayedInjectionBlock.GetStorage(System.Web.Mvc.HtmlHelper)">
+            <summary>
+            Get the storage, but if it doesn't exist or isn't the expected type, then create a new "bucket"
+            </summary>
+            <param name="helper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.DelayedInjectionBlock.#ctor(System.Web.Mvc.HtmlHelper,System.String,System.String)">
+            <summary>
+            Create a new using block from the given helper (used for trapping appropriate context)
+            </summary>
+            <param name="helper">the helper from which we use the context</param>
+            <param name="identifier">optional unique identifier to specify one or many injection blocks</param>
+            <param name="isOnlyOne">extra identifier used to ensure that this item is only added once; if provided, content should only appear once in the page (i.e. only the first block called for this identifier is used)</param>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.DelayedInjectionBlock.Dispose">
+            <summary>
+            Append the internal content to the context's cached list of output delegates
+            </summary>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.Delayed(System.Web.Mvc.HtmlHelper,System.String,System.String)">
+            <summary>
+            <para>Start a delayed-execution block of output -- this will be rendered/printed on the next call to <see cref="M:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.RenderDelayed(System.Web.Mvc.HtmlHelper,System.String,System.Boolean)"/>.</para>
+            <para>
+            <example>
+            Print once in "default block" (usually rendered at end via <code>@Html.RenderDelayed()</code>).  Code:
+            <code>
+            @using (Html.Delayed()) {
+                <b>show at later</b>
+                <span>@Model.Name</span>
+                etc
+            }
+            </code>
+            </example>
+            </para>
+            <para>
+            <example>
+            Print once (i.e. if within a looped partial), using identified block via <code>@Html.RenderDelayed("one-time")</code>.  Code:
+            <code>
+            @using (Html.Delayed("one-time", isOnlyOne: "one-time")) {
+                <b>show me once</b>
+                <span>@Model.First().Value</span>
+            }
+            </code>
+            </example>
+            </para>
+            </summary>
+            <param name="helper">the helper from which we use the context</param>
+            <param name="injectionBlockId">optional unique identifier to specify one or many injection blocks</param>
+            <param name="isOnlyOne">extra identifier used to ensure that this item is only added once; if provided, content should only appear once in the page (i.e. only the first block called for this identifier is used)</param>
+            <returns>using block to wrap delayed output</returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.RenderDelayed(System.Web.Mvc.HtmlHelper,System.String,System.Boolean)">
+            <summary>
+            Render all queued output blocks injected via <see cref="M:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.HtmlExtensions.Delayed(System.Web.Mvc.HtmlHelper,System.String,System.String)"/>.
+            <para>
+            <example>
+            Print all delayed blocks using default identifier (i.e. not provided)
+            <code>
+            @using (Html.Delayed()) {
+                <b>show me later</b>
+                <span>@Model.Name</span>
+                etc
+            }
+            </code>
+            -- then later --
+            <code>
+            @using (Html.Delayed()) {
+                <b>more for later</b>
+                etc
+            }
+            </code>
+            -- then later --
+            <code>
+            @Html.RenderDelayed() // will print both delayed blocks
+            </code>
+            </example>
+            </para>
+            <para>
+            <example>
+            Allow multiple repetitions of rendered blocks, using same <code>@Html.Delayed()...</code> as before.  Code:
+            <code>
+            @Html.RenderDelayed(removeAfterRendering: false); /* will print */
+            @Html.RenderDelayed() /* will print again because not removed before */
+            </code>
+            </example>
+            </para>
+            </summary>
+            <param name="helper">the helper from which we use the context</param>
+            <param name="injectionBlockId">optional unique identifier to specify one or many injection blocks</param>
+            <param name="removeAfterRendering">only render this once</param>
+            <returns>rendered output content</returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.LinqExtensions.AddUnique``1(System.Collections.Generic.IList{``0},``0,System.Func{``0,System.Object})">
+            <summary>
+            Adds an object the end of the List&lt;T&gt;
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+            <param name="item"></param>
+            <param name="propertyExtractor">Function used to extract a property used in items comparision</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.RazorExtensions.Placeholder(System.String)">
+            <summary>
+            Renders placeholder in publish mode
+            </summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.SitecoreExtensions.Extensions.StringExtensions.HtmlToText">
+            <summary>
+            Html To Text converter from HtmlAgilityPack site http://htmlagilitypack.codeplex.com/sourcecontrol/changeset/view/62772#52179
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.Parameters">
+            <summary>
+            Rendering parameters
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.Item">
+            <summary>
+            Page item or datasource item if this one if filled
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.DataSourceItem">
+            <summary>
+            Data source item or null
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.DataSource">
+            <summary>
+            Data source string
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.Name">
+            <summary>
+            Name of the rendering
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.SnippetId">
+            <summary>
+            If this rendering comes from snippet then here will be snippet Id
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.UniqueId">
+            <summary>
+            Returns unique ID of the rendering given by Sitecore upon adding the rendering to the page
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.UniqueIdString">
+            <summary>
+            Returns string representation of unique ID of the rendering given by Sitecore upon adding the rendering to the page or empty string
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.IsFromSnippet">
+            <summary>
+            True if component comes from snippet
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.OriginalDataSource">
+            <summary>
+            Raw datasource field value of current redenring
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.RenderingId">
+            <summary>
+            Current rendering item ID
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.RenderingCssClass">
+            <summary>
+            Css class of the rendering. If empty then default css class will be used.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.RenderingViewPath">
+            <summary>
+            Path to the rendering view. If empty then default logic to resolve view name will be used.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering.ControllerType">
+            <summary>
+            Controller fully qualified type string
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Models.ItemEditArgs.UpdateStatistics">
+            <summary>
+            is set to true this instance will update statistics
+            default: true
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Models.ItemEditArgs.Silent">
+            <summary>
+            if set to true this instance is silent
+            default: false
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Models.ItemEditArgs.Save">
+            <summary>
+            if set to true a succesful operation will result in item being saved
+            default: true
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.SitecoreExtensions.Models.ItemEditArgs.SaveOnError">
+            <summary>
+            if set to true the edited item will get saved despite exceptions in clause code
+            default: false
+            </summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.SitecoreExtensions.Pipelines.HttpRequestBegin.CultureResolver">
+            <summary>
+            Processor used to ser proper language for layout engine    
+            </summary>
+            <remarks>
+            ASP.NET uses the Thread.CurrentThread.CurrentUICulture and Thread.CurrentThread.CurrentCulture properties for localization stuff - such as rendering dated, numbers or other valued for different region.
+            Sitecore does not set these properties based on the context language, so they default to the operating system configuration. 
+            </remarks>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.SitecoreExtensions.Utils.InternalInvoker">
+            <summary>
+            Helper class for creating and caching internal method invocations.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Utils.InternalInvoker.Call``1(``0@,System.Type,System.String)">
+            <summary>Returns an invoker for the specified non-public method.</summary>
+            <param name="cachedInvoker">if <see langword="null"/>, creates a new invoker.</param>
+            <param name="subject">type containing the method for invocation</param>
+            <param name="methodName">name of the method to invoke</param>
+            <typeparam name="T">Prototype of the method.</typeparam>
+            <returns>The cached invoker.</returns>
+            <exception cref="T:System.MissingMethodException">Requested internal method not found.</exception>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Utils.InternalInvoker.Call``1(``0@,System.Type,System.Type[],System.String)">
+            <summary>Returns an invoker for the specified non-public method.</summary>
+            <param name="cachedInvoker">if <see langword="null"/>, creates a new invoker.</param>
+            <param name="subject">type containing the method for invocation</param>
+            <param name="types">array of types of parameters to avoid ambiguous match</param>
+            <param name="methodName">name of the method to invoke</param>
+            <typeparam name="T">Prototype of the method.</typeparam>
+            <returns>The cached invoker.</returns>
+            <exception cref="T:System.MissingMethodException">Requested internal method not found.</exception>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Utils.InternalInvoker.GetField``2(System.Func{``0,``1}@,System.String)">
+            <summary>
+            Returns a getter for the specified non-public field.
+            </summary>
+            <typeparam name="T">Type containing the field.</typeparam>
+            <typeparam name="TResult">Type of the field.</typeparam>
+            <param name="cachedInvoker">if <see langword="null"/>, creates a new invoker.</param>
+            <param name="fieldName">Name of the field to get.</param>
+            <returns>The cached invoker.</returns>
+            <exception cref="T:System.MissingFieldException">Requested field not found.</exception>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Utils.InternalInvoker.SetField``2(System.Action{``0,``1}@,System.String)">
+            <summary>
+            Returns a setter for the specified non-public field.
+            </summary>
+            <typeparam name="T">Type containing the field.</typeparam>
+            <typeparam name="TValue">Type of the field.</typeparam>
+            <param name="cachedInvoker">if <see langword="null"/>, creates a new invoker.</param>
+            <param name="fieldName">Name of the field to set.</param>
+            <returns>The cached invoker.</returns>
+            <exception cref="T:System.MissingFieldException">Requested field not found.</exception>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.SitecoreExtensions.Utils.UrlUtils.IsUrlValidForFile(System.Uri,Sitecore.Web.SiteInfo,System.String,System.StringComparison)">
+            <summary>
+            Checks if url is valid for special file. It includes virtual folder when checking.
+            Special files are robots.txt, sitemap.xml
+            </summary>
+            <param name="url">Request url</param>
+            <param name="site">Resolved site info</param>
+            <param name="file">File name (robots.txt or sitemap.xml)</param>
+            <param name="stringComparison"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

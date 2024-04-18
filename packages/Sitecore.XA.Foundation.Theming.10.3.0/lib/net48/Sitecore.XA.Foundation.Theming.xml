@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XA.Foundation.Theming</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.XA.Foundation.Theming.EventHandlers.AssetContentRefresher">
+            <summary>
+            Class is implementing method which are used when item save or publish events are triggered
+            </summary>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Theming.IThemeExtensionsContext.GetThemeExtensions(Sitecore.Data.Items.Item,Sitecore.Data.ID,System.Collections.Generic.IEnumerable{Sitecore.Data.ID})">
+            <summary>
+            Gets the list of theme extension items.
+            </summary>
+            <param name="site">The site item.</param>
+            <param name="deviceId">The device identifier.</param>
+            <param name="themeIds">The list of theme identifiers.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Theming.IThemeExtensionsContext.ClearThemeExtensionsCache">
+            <summary>
+            Clears the theme extensions cache.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Theming.Pipelines.MediaRequestHandler.OptimizedFiles.GetMediaPath(System.String,Sitecore.Data.Database)">
+            <summary>
+            Method based on Sitecore.Resources.Media.MediaRequest.GetMediaPath() method
+            </summary>
+        </member>
+        <member name="F:Sitecore.XA.Foundation.Theming.Requests.GetWireframeImagesState._device">
+            <summary>
+            The device
+            </summary>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.Theming.Requests.GetWireframeImagesState.Device">
+            <summary>
+            Gets the device.
+            </summary>
+            <value>
+            The device.
+            </value>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.Theming.Requests.GetWireframeImagesState.Item">
+            <summary>
+            Gets the item.
+            </summary>
+            <value>
+            The item.
+            </value>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Theming.Requests.GetWireframeImagesState.ProcessRequest">
+            <summary>
+            Processes the request.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Theming.ThemeExtensionsContext.GetThemeExtensions(Sitecore.Data.Items.Item,Sitecore.Data.ID,System.Collections.Generic.IEnumerable{Sitecore.Data.ID})">
+            <inheritdoc />
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Theming.ThemeExtensionsContext.ClearThemeExtensionsCache">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

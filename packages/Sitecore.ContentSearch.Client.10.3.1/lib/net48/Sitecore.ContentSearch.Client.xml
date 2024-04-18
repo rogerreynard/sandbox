@@ -1,0 +1,680 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.ContentSearch.Client</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.ContentSearch.Client.Commands.Rebuild">
+            <summary>
+            Represents the search:rebuild command.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ContentSearch.Client.Commands.Rebuild.translate">
+            <summary>
+            The translate.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.Rebuild.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ContentSearch.Client.Commands.Rebuild"/> class. 
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Commands.Rebuild.Translate">
+            <summary>
+            Gets the translation API.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.Rebuild.Execute(Sitecore.Shell.Framework.Commands.CommandContext)">
+            <summary>
+            Executes the command in the specified context.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.Rebuild.Run(Sitecore.Web.UI.Sheer.ClientPipelineArgs)">
+            <summary>
+            Runs the commend in ProgressBox.
+            </summary>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.Rebuild.RebuildIndex(Sitecore.Web.UI.Sheer.ClientPipelineArgs)">
+            <summary>
+            The rebuild index.
+            </summary>
+            <param name="args">
+            The Client Pipeline Arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.Rebuild.RebuildDone(Sitecore.Web.UI.Sheer.ClientPipelineArgs)">
+            <summary>
+            Invoked when rebuild is finished.
+            </summary>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="T:Sitecore.ContentSearch.Client.Commands.RebuildAll">
+            <summary>
+            Represents the indexing:rebuildall command.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ContentSearch.Client.Commands.RebuildAll.translate">
+            <summary>
+            The translate.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RebuildAll.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ContentSearch.Client.Commands.RebuildAll"/> class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Commands.RebuildAll.Translate">
+            <summary>
+            Gets the translation API.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RebuildAll.Execute(Sitecore.Shell.Framework.Commands.CommandContext)">
+            <summary>
+            Executes the command in the specified context.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RebuildAll.Run(Sitecore.Web.UI.Sheer.ClientPipelineArgs)">
+            <summary>
+            Runs the command in ProgressBox.
+            </summary>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RebuildAll.RebuildAllIndexes(Sitecore.Web.UI.Sheer.ClientPipelineArgs)">
+            <summary>
+            The rebuild all indexes.
+            </summary>
+            <param name="args">
+            The Client Pipeline Args.
+            </param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RebuildAll.RebuildDone(Sitecore.Web.UI.Sheer.ClientPipelineArgs)">
+            <summary>
+            Invoked when rebuild is done.
+            </summary>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="T:Sitecore.ContentSearch.Client.Commands.RefreshTree">
+            <summary>
+            Represents the search:refreshtree command.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ContentSearch.Client.Commands.RefreshTree.translate">
+            <summary>
+            The translate.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ContentSearch.Client.Commands.RefreshTree.event">
+            <summary>
+            The event.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RefreshTree.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ContentSearch.Client.Commands.RefreshTree"/> class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Commands.RefreshTree.JobHandle">
+            <summary>Gets or sets the reference to the UI job that ProgressBox creates</summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Commands.RefreshTree.Event">
+            <summary>
+            Gets the event hub.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Commands.RefreshTree.Translate">
+            <summary>
+            Gets the translation API.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RefreshTree.Execute(Sitecore.Shell.Framework.Commands.CommandContext)">
+            <summary>
+            Executes the command in the specified context.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RefreshTree.Run(Sitecore.Web.UI.Sheer.ClientPipelineArgs)">
+            <summary>
+            Runs re-indexing in ProgressBox.
+            </summary>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RefreshTree.GetItemByUri(System.String)">
+            <summary>
+            Gets item by its uri.
+            </summary>
+            <param name="uri">
+            The Item URI.
+            </param>
+            <returns>
+            The <see cref="T:Sitecore.Data.Items.Item"/>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RefreshTree.Refresh(Sitecore.Web.UI.Sheer.ClientPipelineArgs)">
+            <summary>
+            The refresh.
+            </summary>
+            <param name="args">
+            The client Pipeline Args.
+            </param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RefreshTree.ShowProgress(System.Object,System.Object[])">
+            <summary>
+            Event handler to show updating progress.
+            </summary>
+            <param name="sender">
+            The sender.
+            </param>
+            <param name="eventArgs">
+            The event args.
+            </param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RefreshTree.RefreshDone(Sitecore.Web.UI.Sheer.ClientPipelineArgs)">
+            <summary>
+            Invoked when refresh done.
+            </summary>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="T:Sitecore.ContentSearch.Client.Commands.RunIndexingManager">
+            <summary>
+            Runs Indexing Manager
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RunIndexingManager.Execute(Sitecore.Shell.Framework.Commands.CommandContext)">
+            <summary>Execute the Rebuild</summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Sitecore.ContentSearch.Client.Commands.RunSolrSchemaPopulate">
+            <summary>
+            Runs Solr schema populate
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Commands.RunSolrSchemaPopulate.Execute(Sitecore.Shell.Framework.Commands.CommandContext)">
+            <summary>Execute the command</summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard">
+            <summary>
+            The Indexing Manager Wizard
+            </summary>
+        </member>
+        <member name="F:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.DeniedIdSymbolsRegex">
+            <summary>
+            The regular expression for transforming job handle to a valid HTML control ID.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.IndexMap">
+            <summary>
+            Gets or sets IndexMap.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.JobHandle">
+            <summary>
+            Gets or sets the handle.
+            </summary>
+            <value>The handle.</value>
+            <contract>
+              <requires name="value" condition="not empty" />
+              <ensures condition="not null" />
+            </contract>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.ErrorText">
+            <summary>
+            Gets or sets the error text.
+            </summary>
+            <value>
+            The error text.
+            </value>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.ResultText">
+            <summary>
+            Gets or sets the result text.
+            </summary>
+            <value>
+            The result text.
+            </value>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.ActivePageChanged(System.String,System.String)">
+            <summary>Detecting the Page Changing</summary>
+            <param name="page">The page.</param>
+            <param name="oldPage">The old page.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.ActivePageChanging(System.String,System.String@)">
+            <summary>Detect Active Page Change</summary>
+            <param name="page">The page.</param>
+            <param name="newpage">The reference to the new page.</param>
+            <returns>True / False</returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.OnLoad(System.EventArgs)">
+            <summary>
+            Raises the load event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+            <remarks>
+            This method notifies the server control that it should perform actions common to each HTTP
+            request for the page it is associated with, such as setting up a database query. At this
+            stage in the page lifecycle, server controls in the hierarchy are created and initialized,
+            view state is restored, and form controls reflect client-side data. Use the IsPostBack
+            property to determine whether the page is being loaded in response to a client postback,
+            or if it is being loaded and accessed for the first time.
+            </remarks>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.CheckStatus">
+            <summary>
+            Checks the status.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.GetSelectedIndexNames">
+            <summary>
+            Gets the selected index names.
+            </summary>
+            <returns>
+            The <see cref="T:Sitecore.Text.ListString" />.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.StartRebuilding">
+            <summary>
+            Starts Building Indexes
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.StartRebuildJobs(Sitecore.Text.ListString)">
+            <summary>
+            Starts indexes rebuild jobs.
+            </summary>
+            <param name="indexNames">The list of index names to rebuild.</param>
+            <returns>The list of <see cref="T:Sitecore.Handle"/> instances.</returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.LogAuditMessage(Sitecore.ContentSearch.ISearchIndex[])">
+            <summary>
+            Logs Audit message about initiated index rebuild operation
+            </summary>
+            <param name="indexes">The list of indexes to rebuild.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.FullRebuild(Sitecore.ContentSearch.ISearchIndex)">
+            <summary>
+            Fulls the rebuild.
+            </summary>
+            <param name="index">The index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.GetHtmlUniqueId(Sitecore.Handle)">
+            <summary>
+            Gets the HTML unique id.
+            </summary>
+            <param name="handle">The handle.</param>
+            <returns>A valid value for HTML id attribute</returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.CheckAndHandleIfThereIsNoJob(System.Collections.Generic.IEnumerable{Sitecore.Abstractions.BaseJob})">
+            <summary>
+            Checks if there is no job in the list and performs corresponding steps.
+            </summary>
+            <param name="jobs">The jobs.</param>
+            <returns><c>true</c> if there were no jobs; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.CheckAndHandleIfAllJobsFailed(System.Collections.Generic.List{Sitecore.Abstractions.BaseJob})">
+            <summary>
+            Checks if all jobs failed and performs corresponding steps.
+            </summary>
+            <param name="jobs">The jobs.</param>
+            <returns><c>true</c> if all jobs had failed; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.PrepareProgressMessages(System.Collections.Generic.IEnumerable{Sitecore.Abstractions.BaseJob})">
+            <summary>
+            Prepares progress messages for the dialog.
+            </summary>
+            <param name="jobs">The jobs.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.CheckAndHandleIfAllJobsFinished(System.Collections.Generic.List{Sitecore.Abstractions.BaseJob},System.Collections.Generic.List{Sitecore.Handle})">
+            <summary>
+            Checks if all job successfully finished and performs corresponding steps.
+            </summary>
+            <param name="jobs">The jobs.</param>
+            <param name="handles">The handles.</param>
+            <returns><see cref="T:System.Boolean"/></returns>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.Indexes">
+            <summary>
+            Gets or sets the indexes.
+            </summary>
+            <value>
+            The indexes.
+            </value>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.IndexStats">
+            <summary>
+            Gets or sets the index stats.
+            </summary>
+            <value>
+            The index stats.
+            </value>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.BuildIndexes">
+            <summary>
+            This is the process that Runs the Index Rebuild
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.AddBreak(System.String)">
+            <summary>
+            Adds the break line.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.BuildIndexCheckbox(Sitecore.ContentSearch.ISearchIndex,System.Boolean)">
+            <summary>
+            Builds a checkbox item for the specified index.  
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.BuildIndexCheckbox(System.String,System.String,Sitecore.Text.ListString,Sitecore.Text.ListString)">
+            <summary>
+            Builds the Checkboxes to select indexes
+            </summary>
+            <param name="name">The name.</param>
+            <param name="header">The header.</param>
+            <param name="selected">The selected.</param>
+            <param name="indexMap">The index map.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.IndexingManagerWizard.BuildTime(System.String)">
+            <summary>
+            Builds the time of executing indexing.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>
+            The <see cref="T:System.String" />.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ContentSearch.Client.Forms.SolrSchemaBuilderWizard">
+            <summary>
+            The Wizard form for the Generate Solr Schema tool
+            </summary>
+        </member>
+        <member name="F:Sitecore.ContentSearch.Client.Forms.SolrSchemaBuilderWizard.SourceFile">
+            <summary>
+            The source file.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ContentSearch.Client.Forms.SolrSchemaBuilderWizard.TargetFile">
+            <summary>
+            The target file.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.SolrSchemaBuilderWizard.ErrorText">
+            <summary>Gets or sets the error text.</summary>
+            <value>The error text.</value>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.SolrSchemaBuilderWizard.ResultText">
+            <summary>Gets or sets the result text.</summary>
+            <value>The result text.</value>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.SolrSchemaBuilderWizard.ActivePageChanged(System.String,System.String)">
+            <summary>Detecting the Page Changing</summary>
+            <param name="page">The page.</param>
+            <param name="oldPage">The old page.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.SolrSchemaBuilderWizard.ActivePageChanging(System.String,System.String@)">
+            <summary>Detect Active Page Change</summary>
+            <param name="page">The page.</param>
+            <param name="newpage">The new page pointer.</param>
+            <returns>True / False</returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.SolrSchemaBuilderWizard.OnLoad(System.EventArgs)">
+            <summary>On Load</summary>
+            <param name="e">The e.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.SolrSchemaBuilderWizard.CheckStatus">
+            <summary>
+            Status Update
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.SolrSchemaBuilderWizard.StartGenerating">
+            <summary>
+            The start generating.
+            </summary>
+        </member>
+        <member name="T:Sitecore.ContentSearch.Client.Forms.SolrSchemaPopulateWizard">
+            <summary>
+            Populate Solr schema.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.SolrSchemaPopulateWizard.IndexNames">
+            <summary>
+            Gets or sets the indexes.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.SolrSchemaPopulateWizard.JobHandleProgressControlMap">
+            <summary>
+            Gets or sets the mapping between the jobs handle and the progress control.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.SolrSchemaPopulateWizard.JobHandle">
+            <summary>
+            Gets or sets populating jobs handle.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.SolrSchemaPopulateWizard.ErrorText">
+            <summary>
+            Gets or sets the error text memo.
+            </summary>
+            <value>
+            The error text.
+            </value>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.SolrSchemaPopulateWizard.Indexes">
+            <summary>
+            Gets or sets the indexes border.
+            </summary>
+            <value>
+            The indexes.
+            </value>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.SolrSchemaPopulateWizard.ResultText">
+            <summary>
+            Gets or sets the result text memo.
+            </summary>
+            <value>
+            The result text.
+            </value>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Forms.SolrSchemaPopulateWizard.Status">
+            <summary>
+            Gets or sets the status border.
+            </summary>
+            <value>
+            The status.
+            </value>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.SolrSchemaPopulateWizard.ActivePageChanged(System.String,System.String)">
+            <summary>Called when the active page has been changed.</summary>
+            <param name="page">The page that has been entered.</param>
+            <param name="oldPage">The page that was left.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.SolrSchemaPopulateWizard.ActivePageChanging(System.String,System.String@)">
+            <summary>
+            Called when the active page is changing.
+            </summary>
+            <param name="page">The page that is being left.</param>
+            <param name="newPage">The new page that is being entered.</param>
+            <returns>True, if the change is allowed, otherwise false.</returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Forms.SolrSchemaPopulateWizard.OnLoad(System.EventArgs)">
+            <summary>
+            Raises the load event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+            <remarks>
+            This method notifies the server control that it should perform actions common to each HTTP
+            request for the page it is associated with, such as setting up a database query. At this
+            stage in the page lifecycle, server controls in the hierarchy are created and initialized,
+            view state is restored, and form controls reflect client-side data. Use the IsPostBack
+            property to determine whether the page is being loaded in response to a client post-back,
+            or if it is being loaded and accessed for the first time.
+            </remarks>
+        </member>
+        <member name="T:Sitecore.ContentSearch.Client.Galleries.IndexesGallery">
+            <summary>
+            Indexes gallery.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Galleries.IndexesGallery.OnLoad(System.EventArgs)">
+            <summary>
+            Raises the load event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Galleries.IndexesGallery.GetCurrentItem">
+            <summary>
+            Gets the current item.
+            </summary>
+            <returns>The current item.</returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Pipelines.ParseDataSource.GetDataSourceItemByQuery.IsDataSourcePrefixed(System.String)">
+            <summary>
+            Indicates whether the data source is prefixed
+            </summary>
+            <param name="dataSource">The data source</param>
+            <returns>true if the data source is prefixed</returns>
+        </member>
+        <member name="T:Sitecore.ContentSearch.Client.Pipelines.Search.GenericSearchIndex">
+            <summary>
+            Search by any field in index
+            </summary>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Pipelines.Search.GenericSearchIndex.CreateQueryAction">
+            <summary>
+            Gets or sets the create query action.
+            </summary>
+            <value>
+            The create query action.
+            </value>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Pipelines.Search.GenericSearchIndex.AssertAction">
+            <summary>
+            Gets or sets the assert action.
+            </summary>
+            <value>
+            The assert action.
+            </value>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Pipelines.Search.GenericSearchIndex.QueryBaseTranslator">
+            <summary>
+            Gets or sets the query base translator.
+            </summary>
+            <value>
+            The query base translator.
+            </value>
+        </member>
+        <member name="P:Sitecore.ContentSearch.Client.Pipelines.Search.GenericSearchIndex.Occurance">
+            <summary>
+            Gets or sets the occurance.
+            </summary>
+            <value>
+            The occurance.
+            </value>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Pipelines.Search.GenericSearchIndex.Search(Sitecore.Pipelines.PipelineArgs,Sitecore.ContentSearch.IProviderSearchContext)">
+            <summary>
+            Searches the specified arguments.
+            </summary>
+            <param name="args">The arguments.</param>
+            <param name="context">The context.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Pipelines.Search.GenericSearchIndex.ResolveOperation(Sitecore.Search.QueryOccurance)">
+            <summary>
+            Resolves the query operation.
+            </summary>
+            <param name="queryOccurance">The query occurance.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Sitecore.ContentSearch.Client.Pipelines.Search.ISearchIndexProcessor">
+            <summary>
+            ISearchIndexProcessor
+            </summary>
+        </member>
+        <member name="T:Sitecore.ContentSearch.Client.Pipelines.Search.SearchContentSearchIndex">
+            <summary>
+            Searches the system index.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ContentSearch.Client.Pipelines.Search.SearchContentSearchIndex.settings">
+            <summary>
+            The settings.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Pipelines.Search.SearchContentSearchIndex.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ContentSearch.Client.Pipelines.Search.SearchContentSearchIndex"/> class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Pipelines.Search.SearchContentSearchIndex.Process(Sitecore.Pipelines.Search.SearchArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Pipelines.Search.SearchContentSearchIndex.FillSearchResult(System.Collections.Generic.IList{Sitecore.ContentSearch.SearchTypes.SitecoreUISearchResultItem},Sitecore.Pipelines.Search.SearchArgs)">
+            <summary>
+            Fills the search result.
+            </summary>
+            <param name="searchResult">The search result.</param>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Pipelines.Search.SearchContentSearchIndex.GetSitecoreItem(Sitecore.ContentSearch.SearchTypes.SitecoreUISearchResultItem)">
+            <summary>
+            Gets the sitecore item.
+            </summary>
+            <param name="searchItem">The search item that corresponds to the search result.</param>
+            <returns>The Sitecore item.</returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.Pipelines.Search.SearchContentSearchIndex.IsHidden(Sitecore.Data.Items.Item)">
+            <summary>
+            Determines whether the specified item is hidden.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <returns>
+            <c>true</c> if the specified item is hidden; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ContentSearch.Client.sitecore.admin.PopulateManagedSchema.OnInit(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Web.UI.Control.Init"/> event to initialize the page.
+            </summary>
+            <param name="arguments">
+            An <see cref="T:System.EventArgs"/> that contains the event data.
+            </param>
+        </member>
+        <member name="F:Sitecore.ContentSearch.Client.sitecore.admin.PopulateManagedSchema.form1">
+            <summary>
+            form1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Sitecore.ContentSearch.Client.sitecore.admin.PopulateManagedSchema.ltResult">
+            <summary>
+            ltResult control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+    </members>
+</doc>

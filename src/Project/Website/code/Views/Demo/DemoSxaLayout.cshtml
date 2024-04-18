@@ -1,0 +1,77 @@
+﻿@using System.Web.Mvc.Html
+@using Sitecore.Mvc
+@using Sitecore.XA.Foundation.MarkupDecorator.Extensions
+@using Sitecore.XA.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.XA.Foundation.Grid.Extensions
+@using Sitecore.XA.Foundation.Theming.Bundler
+@using Sitecore.XA.Foundation.Theming.Models
+@using Sitecore.XA.Foundation.Theming.Services
+@using Microsoft.Extensions.DependencyInjection
+@using Sitecore.DependencyInjection
+@using Foundation.Personalization.Helpers
+
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+    AssetLinks assetLinks = AssetLinksGenerator.GenerateLinks(new ThemesProvider());
+    HTMLIncludes includes = ServiceLocator.ServiceProvider.GetService<IHTMLIncludesService>().GetHTMLIncludes();
+}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="@Model.Item.Language.Name">
+<!--<![endif]-->
+<head>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PJZSNCMH');</script>
+	<!-- End Google Tag Manager -->
+
+	@foreach (string style in assetLinks.Styles)
+	{
+		@Html.Raw(style)
+	}
+
+	@foreach (var include in includes.Head)
+	{
+		@Html.Raw(include.HTML)
+	}
+
+	@Html.Sxa().VisitorIdentification()
+	@Html.Sxa().Placeholder("head")
+</head>
+<body @Html.Sxa().Body().Decorate()>
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJZSNCMH"
+		        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	@Html.Sitecore().Placeholder("body-top")
+	@foreach (var include in includes.BodyTop)
+	{
+		@Html.Raw(include.HTML)
+	}
+	@Html.Sxa().GridBody()
+	@Html.Sitecore().Placeholder("body-bottom")
+	@foreach (var include in includes.BodyBottom)
+	{
+		@Html.Raw(include.HTML)
+	}
+	@foreach (string include in assetLinks.Scripts)
+	{
+		@Html.Raw(include)
+	}
+	<!-- /#wrapper -->
+
+	@InlineScriptHelper.RenderScripts()
+
+</body>
+</html>

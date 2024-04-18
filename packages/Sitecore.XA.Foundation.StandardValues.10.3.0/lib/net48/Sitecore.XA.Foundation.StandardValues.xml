@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XA.Foundation.StandardValues</name>
+    </assembly>
+    <members>
+        <member name="M:Sitecore.XA.Foundation.StandardValues.Pipelines.ExecutePageEditorAction.GetDefaultRenderingParameters.GetValue(System.String,Sitecore.Layouts.RenderingDefinition,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            This method is a copy of Sitecore.Shell.Applications.Layouts.DeviceEditor.RenderingParameters.GetValue
+            with a little modification.
+            </summary>
+            <param name="fieldName"></param>
+            <param name="renderingDefinition"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.StandardValues.Pipelines.ExecutePageEditorAction.GetDefaultRenderingParameters.GetStandardValuesItem(Sitecore.Layouts.RenderingDefinition)">
+            This method is a copy of Sitecore.Shell.Applications.Layouts.DeviceEditor.RenderingParameters.GetStandardValuesItem
+        </member>
+        <member name="M:Sitecore.XA.Foundation.StandardValues.Pipelines.ExecutePageEditorAction.GetDefaultRenderingParameters.GetRenderingItem(Sitecore.Layouts.RenderingDefinition)">
+            This method is a copy of Sitecore.Shell.Applications.Layouts.DeviceEditor.RenderingParameters.GetRenderingItem
+        </member>
+    </members>
+</doc>

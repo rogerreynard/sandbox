@@ -21,7 +21,7 @@ namespace Foundation.ImageMetadataGenerator.Commands
             var item = context.Items[0];
 
             var mediaItem = (MediaItem)item;
-            var imgUrl = GetBase64Url(mediaItem);
+            var imgUrl = GetBase64Encode(mediaItem);
 
             var metadata = GetMetadataFromVision(imgUrl);
             var parts = metadata.Replace("\"", "'").Split(new[] { "\n\n" }, StringSplitOptions.None);
@@ -55,7 +55,7 @@ namespace Foundation.ImageMetadataGenerator.Commands
 
         #region Private Methods
 
-        private static string GetBase64Url(MediaItem mediaItem)
+        private static string GetBase64Encode(MediaItem mediaItem)
         {
             var stream = mediaItem.GetMediaStream();
             var bytes = new byte[stream.Length];

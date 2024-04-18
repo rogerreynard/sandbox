@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XA.Foundation.Multisite</name>
+    </assembly>
+    <members>
+        <member name="M:Sitecore.XA.Foundation.Multisite.Commands.NavigateToSource.Execute(Sitecore.Shell.Framework.Commands.CommandContext)">
+            <summary>
+            Executes the command in the specified context.
+            </summary>
+            <param name="context">
+            The context.
+            </param>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Multisite.Commands.NavigateToSource.QueryState(Sitecore.Shell.Framework.Commands.CommandContext)">
+            <summary>
+            Queries the state of the command.
+            </summary>
+            <param name="context">
+            The context.
+            </param>
+            <returns>
+            The state of the command.
+            </returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Multisite.Commands.NavigateToSource.Run(Sitecore.Web.UI.Sheer.ClientPipelineArgs)">
+            <summary>
+            Runs the pipeline.
+            </summary>
+            <param name="args">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Multisite.ISharedSitesContext.GetSharedSites(Sitecore.Data.Items.Item)">
+            <summary>
+            List of all shared sites for the item tennant.
+            </summary>
+            <param name="item">Context item</param>
+            <returns>Shared sites items</returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Multisite.ISharedSitesContext.GetSharedSitesWithoutCurrent(Sitecore.Data.Items.Item)">
+            <summary>
+            List of shared sites for the item tennant. If context item belongs to shared site, then this site will be excluded from results.
+            </summary>
+            <param name="item">Context item</param>
+            <returns>Shared sites items</returns>
+        </member>
+        <member name="P:Sitecore.XA.Foundation.Multisite.ISharedSitesContext.SharedSites">
+            <summary>
+            List of all shared sites for the Context.Item tennant.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Multisite.SiteResolvers.IEnvironmentSitesResolver.ResolveAllSites(Sitecore.Data.Database)">
+            <summary>
+            Resolves all the site definitions.
+            </summary>
+            <param name="database">The database.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Multisite.SiteResolvers.IEnvironmentSitesResolver.ResolveEnvironmentSites(System.Collections.Generic.List{Sitecore.Data.Items.Item},System.String)">
+            <summary>
+            Resolves site definitions that belongs to the specific environment.
+            </summary>
+            <param name="sites">The site definition list.</param>
+            <param name="environment">The environment.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Multisite.SiteResolvers.IEnvironmentSitesResolver.ResolveEnvironments(System.Collections.Generic.IEnumerable{Sitecore.Data.Items.Item})">
+            <summary>
+            Resolves all the environments.
+            </summary>
+            <param name="sites">The site definition list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Multisite.SiteResolvers.IEnvironmentSitesResolver.GetActiveEnvironment">
+            <summary>
+            Gets the active environment.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.Multisite.Templates.Media">
+            <summary>
+            Virtual Media  Folder
+            </summary>
+        </member>
+    </members>
+</doc>

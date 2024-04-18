@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XA.Foundation.Presentation</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.XA.Foundation.Presentation.Pipelines.GetXmlBasedLayoutDefinition.AddPartialDesignsRenderings">
+            <summary>
+            Processor responsible for getting partial design renderings
+            </summary>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Presentation.PresentationContext.PartialDesignId(Sitecore.XA.Foundation.SitecoreExtensions.Interfaces.IRendering)">
+            <summary>
+            If this rendering comes from partial design then here will be partial design Id
+            </summary>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Presentation.Services.RenderingParametersService.GetStandardValuesItem(Sitecore.Layouts.RenderingDefinition)">
+            This method is a copy of Sitecore.Shell.Applications.Layouts.DeviceEditor.RenderingParameters.GetStandardValuesItem
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Presentation.Services.RenderingParametersService.GetRenderingItem(Sitecore.Layouts.RenderingDefinition)">
+            This method is a copy of Sitecore.Shell.Applications.Layouts.DeviceEditor.RenderingParameters.GetRenderingItem
+        </member>
+        <member name="T:Sitecore.XA.Foundation.Presentation.Templates._DesignTemplateMapping">
+            <summary>
+            NEW TEMPLATE
+            </summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.Presentation.Templates.PartialDesign">
+            <summary>
+            NEW TEMPLATE
+            </summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.Presentation.Templates.PartialDesigns">
+            <summary>
+            NEW TEMPLATE
+            </summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.Presentation.Templates.Design">
+            <summary>
+            NEW TEMPLATE
+            </summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.Presentation.Templates._Designable">
+            <summary>
+            NEW TEMPLATE
+            </summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.Presentation.Templates.DesignFolder">
+            <summary>
+            NEW TEMPLATE
+            </summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.Presentation.Templates.AvailableRenderings">
+            <summary>
+            NEW TEMPLATE
+            </summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.Presentation.Templates.AvailableRenderingsFolder">
+            <summary>
+            NEW TEMPLATE
+            </summary>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.Presentation.Templates.Style">
+            <summary>
+            NEW TEMPLATE
+            </summary>
+        </member>
+    </members>
+</doc>

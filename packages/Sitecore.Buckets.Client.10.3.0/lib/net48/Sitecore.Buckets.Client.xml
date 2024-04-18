@@ -1,0 +1,612 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.Buckets.Client</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.Buckets.Client.AllowBreakingChangeAttribute">
+            <summary>
+            Represents a custom attribute that allows to ignore breaking changes found by ApiCheck.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:Sitecore.Buckets.Client.BucketsServicesConfigurator">
+            <summary>
+            The buckets services configurator.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Client.BucketsServicesConfigurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures service collection.
+            </summary>
+            <param name="serviceCollection">The service collection.</param>
+        </member>
+        <member name="M:Sitecore.Buckets.Client.layouts.Sample_Datasource_Sublayout.Page_Load(System.Object,System.EventArgs)">
+            <summary>
+            The page_ load.
+            </summary>
+            <param name="sender">
+            The sender.
+            </param>
+            <param name="e">
+            The e.
+            </param>
+        </member>
+        <member name="F:Sitecore.Buckets.Client.layouts.Sample_Datasource_Sublayout.SampleListView">
+            <summary>
+            SampleListView control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Sitecore.Buckets.Client.layouts.Sample_Datasource_Sublayout.RunTime">
+            <summary>
+            RunTime control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:Sitecore.Buckets.Client.Rules.Macros.TagMacro">
+            <summary>
+            Represents macro to select profile cards.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Client.Rules.Macros.TagMacro.#ctor">
+            <summary>
+            Initializes new instance of the <see cref="T:Sitecore.Buckets.Client.Rules.Macros.TagMacro"/> class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Client.Rules.Macros.TagMacro.Execute(System.Xml.Linq.XElement,System.String,Sitecore.Text.UrlString,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Sitecore.Buckets.Client.sitecore_modules.Shell.Sitecore.Buckets.ItemBucketsSearchResult">
+            <summary>
+            Item buckets search result master page
+            </summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Client.sitecore_modules.Shell.Sitecore.Buckets.ItemBucketsSearchResult.OnLoad(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Web.UI.Control.Load" /> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs" /> object that contains the event data.</param>
+        </member>
+        <member name="M:Sitecore.Buckets.Client.sitecore_modules.Shell.Sitecore.Buckets.ItemBucketsSearchResult.AddTranslation(System.String,System.String,System.String)">
+            <summary>
+            The add translation.
+            </summary>
+            <param name="script">
+            The script.
+            </param>
+            <param name="key">
+            The key.
+            </param>
+            <param name="variableName">
+            The variable name.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Client.sitecore_modules.Shell.Sitecore.Buckets.ItemBucketsSearchResult.AddTranslation(System.String,System.String,System.String,System.String)">
+            <summary>
+            Adds the translation in specified window global object.
+            </summary>
+            <param name="script">The script.</param>
+            <param name="key">The key.</param>
+            <param name="translationName">Name of the variable.</param>
+            <param name="globalObjectName">Name of the global object.</param>
+            <returns>
+            The script
+            </returns>
+        </member>
+        <member name="F:Sitecore.Buckets.Client.sitecore_modules.Shell.Sitecore.Buckets.ItemBucketsSearchResult.dynamicHeadPlaceholder">
+            <summary>
+            dynamicHeadPlaceholder control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Sitecore.Buckets.Client.sitecore_modules.Shell.Sitecore.Buckets.ItemBucketsSearchResult.head">
+            <summary>
+            head control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Sitecore.Buckets.Client.sitecore_modules.Shell.Sitecore.Buckets.ItemBucketsSearchResult.Form1">
+            <summary>
+            Form1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Sitecore.Buckets.Client.sitecore_modules.Shell.Sitecore.Buckets.ItemBucketsSearchResult.body">
+            <summary>
+            body control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:Sitecore.Buckets.Client.Applications.Dialogs.SelectTag.SelectTagOptions.GetXmlControl">
+            <inheritdoc />
+        </member>
+        <member name="T:Sitecore.Buckets.Module.AddTab">
+            <summary>The add tab.</summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.AddTab.OnInit(System.EventArgs)">
+            <summary>
+            The on init.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.AddTab.Page_Load(System.Object,System.EventArgs)">
+            <summary>The page_ load.</summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The e.</param>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.AddTab.form1">
+            <summary>
+            form1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:Sitecore.Buckets.Module.BucketSearchUI">
+            <summary>
+            Bucket search UI
+            </summary>
+        </member>
+        <member name="T:Sitecore.Buckets.Module.BucketSearchUI.BucketsViewType">
+            <summary>
+            Buckets view types
+            </summary>
+        </member>
+        <member name="P:Sitecore.Buckets.Module.BucketSearchUI.BucketsView">
+            <summary>
+            Gets or sets the buckets view.
+            </summary>
+            <value>
+            The buckets view.
+            </value>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.BucketSearchUI.OnLoad(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Web.UI.Control.Load" /> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs" /> object that contains the event data.</param>
+        </member>
+        <member name="T:Sitecore.Buckets.Module.DatasetResult">
+            <summary>The dataset result.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.DatasetResult.Filter">
+            <summary>The filter.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.DatasetResult._ID">
+            <summary>The _ id.</summary>
+        </member>
+        <member name="P:Sitecore.Buckets.Module.DatasetResult.Id">
+            <summary>Gets or sets the id.</summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.DatasetResult.OnInit(System.EventArgs)">
+            <summary>
+            The on init.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.DatasetResult.Page_Load(System.Object,System.EventArgs)">
+            <summary>The page_ load.</summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The e.</param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.DatasetResult.AddToHead(System.String)">
+            <summary>
+            Adds the content to head tag.
+            </summary>
+            <param name="content">The content.</param>
+        </member>
+        <member name="T:Sitecore.Buckets.Module.FieldResults">
+            <summary>The field results.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.FieldResults.Filter">
+            <summary>The filter.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.FieldResults._ID">
+            <summary>The _ id.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.FieldResults.thisIsWorkBox">
+            <summary>The this is work box.</summary>
+        </member>
+        <member name="P:Sitecore.Buckets.Module.FieldResults.Id">
+            <summary>Gets or sets the id.</summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.FieldResults.OnInit(System.EventArgs)">
+            <summary>
+            The on init.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.FieldResults.Page_Load(System.Object,System.EventArgs)">
+            <summary>The page_ load.</summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The e.</param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.FieldResults.AddToHead(System.String)">
+            <summary>
+            Adds the content to head tag.
+            </summary>
+            <param name="content">The content.</param>
+        </member>
+        <member name="T:Sitecore.Buckets.Module.ItemBucketService">
+            <summary>The item bucket service.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.ItemBucketService.ServiceLocator">
+            <summary>
+            The service locator.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Buckets.Module.ItemBucketService"/> class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.CheckSecurity">
+            <summary>
+            Checks the security.
+            
+            </summary>
+            <param name="isDeveloperAllowed">if set to <c>true</c>, developer is allowed.
+                        </param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GenericCall(System.String)">
+            <summary>The generic call.</summary>
+            <param name="ServiceName">The service name.</param>
+            <returns>The System.Collections.Generic.List`1[T -&gt; System.String].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetAllSearchFilters">
+            <summary>
+            The generic call.
+            </summary>
+            <returns>
+            The System.Collections.Generic.List`1[T -&gt; System.String].
+            </returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetAuthors(System.String)">
+            <summary>The get authors.</summary>
+            <param name="tagChars">The tag chars.</param>
+            <returns>The System.Collections.Generic.List`1[T -&gt; System.String].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetBuckets(System.String)">
+            <summary>
+            Gets a list of all buckets in the content tree.
+            </summary>
+            <param name="tagChars">The tag chars.</param>
+            <returns>
+            The <see cref="T:System.Collections.Generic.List`1" />.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetCommon">
+            <summary>The get common.</summary>
+            <returns>The System.Collections.Generic.List`1[T -&gt; System.String].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetDefault">
+            <summary>The get default.</summary>
+            <returns>The System.String.</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetCulture">
+            <summary>The get default.</summary>
+            <returns>The System.String.</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetFieldValues(System.String)">
+            <summary>The get field values.</summary>
+            <param name="FieldName">The field name.</param>
+            <returns>The System.String.</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetFields(System.String)">
+            <summary>The get fields.</summary>
+            <param name="tagChars">The tag chars.</param>
+            <returns>The System.Collections.Generic.List`1[T -&gt; System.String].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetFileType(System.String)">
+            <summary>The get file type.</summary>
+            <param name="tagChars">The tag chars.</param>
+            <returns>The System.Collections.Generic.List`1[T -&gt; System.String].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetLanguages(System.String)">
+            <summary>
+            The get languages.
+            </summary>
+            <param name="tagChars">The tag chars.</param>
+            <returns>
+            The System.Collections.Generic.List`1[T -&gt; System.String].
+            </returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetMediaPath(System.String)">
+            <summary>The get media path.</summary>
+            <param name="id">The id.</param>
+            <returns>The System.String.</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetMediaPathSource(System.String)">
+            <summary>The get media path source.</summary>
+            <param name="id">The id.</param>
+            <returns>The System.String.</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetNames(System.String)">
+            <summary>The get names.</summary>
+            <param name="tagChars">The tag chars.</param>
+            <returns>The System.Collections.Generic.List`1[T -&gt; System.String].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetSearchTypes">
+            <summary>The get search types.</summary>
+            <returns>The System.Collections.Generic.List`1[T -&gt; System.String].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetSites">
+            <summary>The get sites.</summary>
+            <returns>The System.Collections.Generic.List`1[T -&gt; System.String].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetTag(System.String)">
+            <summary>The get tag.</summary>
+            <param name="tagChars">The tag chars.</param>
+            <returns>The System.Collections.Generic.List`1[T -&gt; Sitecore.Buckets.Common.Providers.Tag].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetTemplates(System.String)">
+            <summary>
+            The get templates.
+            </summary>
+            <param name="tagChars">
+            </param>
+            <returns>
+            The System.Collections.Generic.List`1[T -&gt; AutocompleteItem].
+            </returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetView(System.String)">
+            <summary>The get view.</summary>
+            <param name="viewName">The view name.</param>
+            <returns>The Sitecore.Buckets.Search.View.</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetViews">
+            <summary>The get views.</summary>
+            <returns>The Sitecore.Buckets.Search.View[].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.QueryServer">
+            <summary>The query server.</summary>
+            <returns>The System.String.</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.RemoveFieldValues(System.String,System.String)">
+            <summary>The remove field values.</summary>
+            <param name="newId">The new id.</param>
+            <param name="FieldName">The field name.</param>
+            <returns>The System.String.</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.Run(System.Collections.Generic.List{Sitecore.ContentSearch.Utilities.SearchStringModel})">
+            <summary>The run.</summary>
+            <param name="currentSearchFilter">The current search filter.</param>
+            <returns>The System.Collections.Generic.List`1[T -&gt; Sitecore.Buckets.Util.SitecoreUISearchResultItem].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.RunLookup">
+            <summary>The run lookup.</summary>
+            <returns>The System.Collections.Generic.List`1[T -&gt; ItemBuckets.DropDown].</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.SaveClosedTabs(System.String)">
+            <summary>The save closed tabs.</summary>
+            <param name="ids">The ids.</param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.GetCalendarCulture">
+            <summary>
+            The save closed tabs.
+            </summary>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ItemBucketService.SaveFieldValues(System.String,System.String)">
+            <summary>The save field values.</summary>
+            <param name="newId">The new id.</param>
+            <param name="FieldName">The field name.</param>
+            <returns>The System.String.</returns>
+        </member>
+        <member name="T:Sitecore.Buckets.Module.MediaBrowser">
+            <summary>The media browser.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.MediaBrowser.Filter">
+            <summary>The filter.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.MediaBrowser._ID">
+            <summary>The _ id.</summary>
+        </member>
+        <member name="P:Sitecore.Buckets.Module.MediaBrowser.Id">
+            <summary>Gets or sets the id.</summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.MediaBrowser.OnInit(System.EventArgs)">
+            <summary>
+            The on init.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.MediaBrowser.Page_Load(System.Object,System.EventArgs)">
+            <summary>The page_ load.</summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The e.</param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.MediaBrowser.AddToHead(System.String)">
+            <summary>
+            Adds the content to head tag.
+            </summary>
+            <param name="content">The content.</param>
+        </member>
+        <member name="T:Sitecore.Buckets.Module.MiniResults">
+            <summary>The mini results.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.MiniResults.Filter">
+            <summary>The filter.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.MiniResults._ID">
+            <summary>The _ id.</summary>
+        </member>
+        <member name="P:Sitecore.Buckets.Module.MiniResults.Id">
+            <summary>Gets or sets the id.</summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.MiniResults.OnInit(System.EventArgs)">
+            <summary>
+            The on init.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.MiniResults.Page_Load(System.Object,System.EventArgs)">
+            <summary>The page_ load.</summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The e.</param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.MiniResults.AddToHead(System.String)">
+            <summary>
+            Adds the content to head tag.
+            </summary>
+            <param name="content">The content.</param>
+        </member>
+        <member name="T:Sitecore.Buckets.Module.Rebuild">
+            <summary>
+            Summary description for Rebuild
+            </summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.Rebuild.Copy(System.String,System.String)">
+            <summary>The copy.</summary>
+            <param name="sourceDirectory">The source directory.</param>
+            <param name="targetDirectory">The target directory.</param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.Rebuild.CopyAll(System.IO.DirectoryInfo,System.IO.DirectoryInfo)">
+            <summary>The copy all.</summary>
+            <param name="source">The source.</param>
+            <param name="target">The target.</param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.Rebuild.Build(System.String,System.String)">
+            <summary>The build.</summary>
+            <param name="indexName">The index name.</param>
+            <param name="returnPath">The return path.</param>
+            <returns>The System.String.</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.Rebuild.WebServiceCall">
+            <summary>The web service call.</summary>
+            <returns>The System.String.</returns>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.Rebuild.WebServiceCallEnable">
+            <summary>The web service call enable.</summary>
+            <returns>The System.String.</returns>
+        </member>
+        <member name="T:Sitecore.Buckets.Module.SearchBox">
+            <summary>
+            Search Box
+            </summary>
+        </member>
+        <member name="T:Sitecore.Buckets.Module.ShowResult">
+            <summary>The show result.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.ShowResult.filter">
+            <summary>The filter.</summary>
+        </member>
+        <member name="F:Sitecore.Buckets.Module.ShowResult.globalSearchFilter">
+            <summary>The global search filter.</summary>
+        </member>
+        <member name="P:Sitecore.Buckets.Module.ShowResult.Id">
+            <summary>Gets the id.</summary>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ShowResult.OnInit(System.EventArgs)">
+            <summary>
+            The on init.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ShowResult.Page_Load(System.Object,System.EventArgs)">
+            <summary>The page_ load.</summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The e.</param>
+        </member>
+        <member name="M:Sitecore.Buckets.Module.ShowResult.AddToHead(System.String)">
+            <summary>
+            Adds the content to head tag.
+            </summary>
+            <param name="content">The content.</param>
+        </member>
+        <member name="T:ItemBuckets.Services.Search">
+            <summary>
+            Search End Point
+            </summary>
+        </member>
+        <member name="F:ItemBuckets.Services.Search.ThisLock">
+            <summary>
+            The this lock
+            </summary>
+        </member>
+        <member name="F:ItemBuckets.Services.Search.cacheHashtable">
+            <summary>
+            The cache hashtable
+            </summary>
+        </member>
+        <member name="P:ItemBuckets.Services.Search.IsReusable">
+            <summary>Gets a value indicating whether is reusable.</summary>
+        </member>
+        <member name="P:ItemBuckets.Services.Search.CacheHashTable">
+            <summary>
+            Gets the cache hash table.
+            </summary>
+            <value>
+            The cache hash table.
+            </value>
+        </member>
+        <member name="M:ItemBuckets.Services.Search.ProcessRequest(System.Web.HttpContext)">
+            <summary>The process request.</summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:ItemBuckets.Services.Search.ProcessRequestAsync(System.Web.HttpContext)">
+            <summary>
+            The process request async.
+            </summary>
+            <param name="context">
+            The context.
+            </param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/>.
+            </returns>
+        </member>
+        <member name="M:ItemBuckets.Services.Search.AddToSearchQuery(System.String,System.String,System.String)">
+            <summary>
+            Add into Search Query Array
+            </summary>
+            <param name="type">Type</param>
+            <param name="value">Value</param>
+            <param name="operation">Operation</param>
+        </member>
+        <member name="M:ItemBuckets.Services.Search.ProcessCachedDisplayedSearch(Sitecore.ContentSearch.SitecoreIndexableItem,Sitecore.ContentSearch.IProviderSearchContext)">
+            <summary>
+            Processes the cached displayed search.
+            </summary>
+            <param name="startLocationItem">The start location item.</param>
+            <param name="searchContext">The search context.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

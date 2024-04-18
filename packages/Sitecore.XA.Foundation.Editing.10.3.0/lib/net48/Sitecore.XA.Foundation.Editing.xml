@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XA.Foundation.Editing</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.XA.Foundation.Editing.Commands.PreviewItem">
+            <summary>
+            Represents the Preview Item command.
+            
+            </summary>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Editing.Commands.PreviewItem.Execute(Sitecore.Shell.Framework.Commands.CommandContext)">
+            <summary>
+                Executes the command in the specified context.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Editing.Commands.PreviewItem.QueryState(Sitecore.Shell.Framework.Commands.CommandContext)">
+            <summary>
+                Queries the state of the command.
+            </summary>
+            <param name="context">The context.</param>
+            <returns>The state of the command.</returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.Editing.Commands.PreviewItem.Run(Sitecore.Web.UI.Sheer.ClientPipelineArgs)">
+            <summary>
+                Runs the specified args.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="T:Sitecore.XA.Foundation.Editing.Items.EditItem">
+            <summary>
+            Item placed in the Core database
+            </summary>
+        </member>
+    </members>
+</doc>

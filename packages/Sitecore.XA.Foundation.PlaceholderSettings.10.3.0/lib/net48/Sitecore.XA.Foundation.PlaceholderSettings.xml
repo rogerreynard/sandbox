@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XA.Foundation.PlaceholderSettings</name>
+    </assembly>
+    <members>
+        <member name="M:Sitecore.XA.Foundation.PlaceholderSettings.Services.ILayoutsPageContext.GetSxaPlaceholderItems(System.String,System.String,Sitecore.Data.Items.Item,Sitecore.Data.ID)">
+            <summary>
+            Get explicitly assigned placeholder setting for a given placeholder
+            </summary>
+            <param name="layout">Layout Definition</param>
+            <param name="placeholderKey">Placeholder Key</param>
+            <param name="currentItem">Current item</param>
+            <param name="deviceId">Current device id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.PlaceholderSettings.Services.ILayoutsPageContext.GetPlaceholderItem(System.String,Sitecore.Data.Database,System.String)">
+            <summary>
+            Get PlaceholderSettings item
+            </summary>
+            <param name="placeholderKey">Placeholder Key</param>
+            <param name="database">Database</param>
+            <param name="layoutDefinition">Layout Definition</param>
+            <returns>PlaceholderSettings Item</returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.PlaceholderSettings.Services.ILayoutsPageContext.GetPlaceholderItem(System.String,Sitecore.Data.Database,System.String,System.Boolean)">
+            <summary>
+            Get PlaceholderSettings item
+            </summary>
+            <param name="placeholderKey">Placeholder Key</param>
+            <param name="database">Database</param>
+            <param name="layoutDefinition">Layout Definition</param>
+            <param name="useFallbackPlaceholder"></param>
+            <returns>PlaceholderSettings Item</returns>
+        </member>
+        <member name="M:Sitecore.XA.Foundation.PlaceholderSettings.Services.ILayoutsPageContext.GetSxaPlaceholderItem(System.String,Sitecore.Data.Items.Item)">
+            <summary>
+            Get PlaceholderSettings item from current site
+            </summary>
+            <param name="placeholderKey">Placeholder Key</param>
+            <param name="currentItem">Current item</param>
+            <returns>PlaceholderSettings Item</returns>
+        </member>
+    </members>
+</doc>

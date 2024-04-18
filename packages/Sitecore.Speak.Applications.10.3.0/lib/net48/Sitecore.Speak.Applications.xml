@@ -1,0 +1,1282 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.Speak.Applications</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.Speak.Applications.Dependencies.AppDependencyManager">
+            <summary>
+              Defines the AppDependencyManager type.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.Dependencies.AppDependencyManager.SyncRoot">
+            <summary>
+            The sync root.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.Dependencies.AppDependencyManager.provider">
+            <summary>
+            The provider.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.Dependencies.AppDependencyManager.Applications">
+            <summary>
+            Gets the applications.
+            </summary>
+            <value>
+            The applications.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.Dependencies.AppDependencyManager.Provider">
+            <summary>
+            Gets or sets the dependencies provider.
+            </summary>
+            <value>
+            The provider.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.Dependencies.AppDependencyManager.RegisteredProducts">
+            <summary>
+            Gets the registered products.
+            </summary>
+            <value>
+            The registered products.
+            </value>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.Dependencies.Application">
+            <summary>
+            Defines the Application type.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.Dependencies.Application.products">
+            <summary>
+            The products.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Application.#ctor(Sitecore.Data.ID,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Speak.Applications.Dependencies.Application" /> class.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="name">The name.</param>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.Dependencies.Application.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.Dependencies.Application.Name">
+            <summary>
+            Gets or sets the application name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Application.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Application.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Application.GetRequiredProducts">
+            <summary>
+              Gets products required for the application.
+            </summary>
+            <returns>Required products.</returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Application.IsDependentUpon(System.String)">
+            <summary>
+            Determines whether the application is dependent upon the specified product.
+            </summary>
+            <param name="productName">Name of the product.</param>
+            <returns>
+              <c>true</c> if the application is dependent upon the specified product; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Application.RegisterRequiredProduct(Sitecore.Speak.Applications.Dependencies.Product)">
+            <summary>
+            Registers the required product.
+            </summary>
+            <param name="product">The product.</param>
+            <returns>
+            true, if the product had not previously been registered in the application and was successfully added; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.Dependencies.ApplicationCollection">
+            <summary>
+              Defines the ApplicationCollection type.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.Dependencies.ApplicationCollection.applications">
+            <summary>
+              The applications.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.Dependencies.ApplicationCollection.Item(Sitecore.Data.ID)">
+            <summary>
+            Gets the <see cref="T:Sitecore.Speak.Applications.Dependencies.Application" /> with the specified application id.
+            </summary>
+            <value>
+            The <see cref="T:Sitecore.Speak.Applications.Dependencies.Application" />.
+            </value>
+            <param name="applicationId">The application id.</param>
+            <returns>
+            Application instance, if it has been found; otherwise null.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ApplicationCollection.Add(Sitecore.Speak.Applications.Dependencies.Application)">
+            <summary>
+            Adds the specified application.
+            </summary>
+            <param name="application">The application.</param>
+            <returns>true, if the application has successfully been added to the collection; otherwise, false</returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ApplicationCollection.Clear">
+            <summary>
+              Removes all applications from the collection.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ApplicationCollection.GetEnumerator">
+            <summary>
+              Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+              A <see cref="T:System.Collections.Generic.IEnumerator`1" /> that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ApplicationCollection.Remove(Sitecore.Data.ID)">
+            <summary>
+            Removes the specified application by its Id.
+            </summary>
+            <param name="applicationId">
+            The application name.
+            </param>
+            <returns>
+            true, if the application was in the collection and was removed; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ApplicationCollection.Remove(Sitecore.Speak.Applications.Dependencies.Application)">
+            <summary>
+            Removes the specified application.
+            </summary>
+            <param name="application">
+            The application.
+            </param>
+            <returns>
+            true, if the application was in the collection and was removed; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ApplicationCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+              Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+              An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.Dependencies.DefaultDependencyEvaluator">
+            <summary>
+            Default dependency evaluator.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.DefaultDependencyEvaluator.IsEnabled">
+            <summary>
+            Determines whether dependency is enabled or not.
+            </summary>
+            <returns><c>true</c> if dependency is enabled; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.Dependencies.DependencyProvider">
+            <summary>
+              Defines the DependencyProvider type.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.Dependencies.DependencyProvider.applications">
+            <summary>
+            The applications.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.Dependencies.DependencyProvider.registeredProducts">
+            <summary>
+            The registered products.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.Dependencies.DependencyProvider.Applications">
+            <summary>
+            Gets the applications.
+            </summary>
+            <value>
+            The applications.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.Dependencies.DependencyProvider.RegisteredProducts">
+            <summary>
+            Gets the registered products.
+            </summary>
+            <value>
+            The registered products.
+            </value>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.DependencyProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes the provider.
+            </summary>
+            <param name="name">The friendly name of the provider.</param>
+            <param name="config">A collection of the name/value pairs representing the provider-specific attributes specified in the configuration for this provider.</param>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.DependencyProvider.Initialize(System.Xml.XmlNode)">
+            <summary>
+            Initializes the provider using the specified dependency configuration.
+            </summary>
+            <param name="dependencyConfiguration">The dependency configuration.</param>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.DependencyProvider.LogError(System.String)">
+            <summary>
+            Logs the error.
+            </summary>
+            <param name="errorMessage">The error message.</param>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.Dependencies.IDependencyEvaluator">
+            <summary>
+             Dependency evaluator interface.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.IDependencyEvaluator.IsEnabled">
+            <summary>
+            Determines whether dependency is enabled or not.
+            </summary>
+            <returns><c>true</c> if dependency is enabled; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.Dependencies.Product">
+            <summary>
+              Defines the Product type.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.Dependencies.Product.applications">
+            <summary>
+              The applications.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Product.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Speak.Applications.Dependencies.Product"/> class.
+            </summary>
+            <param name="name">The product name.</param>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Product.#ctor(System.String,Sitecore.Speak.Applications.Dependencies.IDependencyEvaluator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Speak.Applications.Dependencies.Product"/> class.
+            </summary>
+            <param name="name">The product name.</param>
+            <param name="dependencyEvaluator">The dependency evaluator object.</param>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.Dependencies.Product.Name">
+            <summary>
+              Gets or sets the Product name.
+            </summary>
+            <value>
+              The name.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.Dependencies.Product.DependencyEvaluator">
+            <summary>
+            Gets or sets the dependency evaluator.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Product.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">
+            The <see cref="T:System.Object"/> to compare with this instance.
+            </param>
+            <returns>
+            <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Product.GetDependentApplications">
+            <summary>
+              Gets the dependent applications.
+            </summary>
+            <returns>Enumeration of applications that depend on this product.</returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Product.GetHashCode">
+            <summary>
+              Returns a hash code for this instance.
+            </summary>
+            <returns>
+              A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Product.RegisterDependentApplication(Sitecore.Speak.Applications.Dependencies.Application)">
+            <summary>
+            Registers the dependent application.
+            </summary>
+            <param name="application">
+            The application.
+            </param>
+            <returns>
+            true, if the application had not previously been registered in the product and was successfully added; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.Product.IsEnabled">
+            <summary>
+            Determines whether product is enabled or not.
+            </summary>
+            <returns>Value indicating whether product is enabled or not.</returns>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.Dependencies.ProductCollection">
+            <summary>
+              Defines the ProductCollection type.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.Dependencies.ProductCollection.products">
+            <summary>
+              The products.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.Dependencies.ProductCollection.Item(System.String)">
+            <summary>
+            Gets the <see cref="T:Sitecore.Speak.Applications.Dependencies.Product"/> with the specified product name.
+            </summary>
+            <value>
+            The <see cref="T:Sitecore.Speak.Applications.Dependencies.Product"/>.
+            </value>
+            <param name="productName">
+            Name of the product.
+            </param>
+            <returns>
+            Product instance, if it has been found; otherwise null.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ProductCollection.Add(Sitecore.Speak.Applications.Dependencies.Product)">
+            <summary>
+            Adds the specified product.
+            </summary>
+            <param name="product">The product.</param>
+            <returns>true, if the product has successfully been added to the collection; otherwise, false</returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ProductCollection.Clear">
+            <summary>
+              Removes all products from this instance.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ProductCollection.GetEnumerator">
+            <summary>
+              Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+              A <see cref="T:System.Collections.Generic.IEnumerator`1" /> that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ProductCollection.Remove(Sitecore.Speak.Applications.Dependencies.Product)">
+            <summary>
+            Removes the specified product.
+            </summary>
+            <param name="product">
+            The product.
+            </param>
+            <returns>
+            true, if the product was in the collection and was removed; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ProductCollection.Remove(System.String)">
+            <summary>
+            Removes the specified product by its name.
+            </summary>
+            <param name="productName">
+            The product name.
+            </param>
+            <returns>
+            true, if the product was in the collection and was removed; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.ProductCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+              Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+              An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.Dependencies.XdbDependencyEvaluator">
+            <summary>
+            Xdb dependency evaluator.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Dependencies.XdbDependencyEvaluator.IsEnabled">
+            <summary>
+            Determines whether Xdb is enabled or not.
+            </summary>
+            <returns><c>true</c> if Xdb is enabled; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.InsertAnchor">
+            <summary>
+            The insert anchor.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertAnchor.Back">
+            <summary>
+            Gets or sets the back.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertAnchor.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertAnchor.Anchor">
+            <summary>
+            Gets or sets the anchor.
+            </summary>
+            <value>
+            The anchor.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertAnchor.AlternateText">
+            <summary>
+            Gets or sets the alternate text.
+            </summary>
+            <value>
+            The alternate text.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertAnchor.Style">
+            <summary>
+            Gets or sets the style.
+            </summary>
+            <value>
+            The style.
+            </value>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertAnchor.Initialize">
+            <summary>
+            The initialize.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertAnchor.GetXmlAttributeValue(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Gets the XML attribute value.
+            </summary>
+            <param name="element">The XML Element to look for a certain attribute on.</param>
+            <param name="attrName">Name of the attribute.</param>
+            <returns>Attributes value. If attribute wasn't found it just returns an empty string.</returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertAnchor.ReadRefererParamAndSetClickAction">
+            <summary>
+            Reads the referrer parameter and set click action.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertAnchor.ReadRawValueAndSetInitValues">
+            <summary>
+            Reads the raw value and set initial values.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.InsertEmail">
+            <summary>
+            The insert email.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertEmail.Back">
+            <summary>
+            Gets or sets the back.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertEmail.DisplayedText">
+            <summary>
+            Gets or sets the displayed text.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertEmail.EmailAddress">
+            <summary>
+            Gets or sets the email address.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertEmail.Style">
+            <summary>
+            Gets or sets the style.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertEmail.Subject">
+            <summary>
+            Gets or sets the subject.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertEmail.Initialize">
+            <summary>
+            The initialize.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertEmail.GetXmlAttributeValue(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Gets the XML attribute value.
+            </summary>
+            <param name="element">The XML Element to look for a certain attribute on.</param>
+            <param name="attrName">Name of the attribute.</param>
+            <returns>Attributes value. If attribute wasn't found it just returns an empty string.</returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertEmail.ReadRefererParamAndSetClickAction">
+            <summary>
+            Reads the referrer parameter and set click action.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertEmail.ReadRawValueAndSetInitValues">
+            <summary>
+            Reads the raw value and set initial values.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.InsertLinkDialog">
+            <summary>
+            InsertLinkDialog class
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.InsertLinkDialog.targetActiveBrowserItemId">
+            <summary>
+            The target active browser item id.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.InsertLinkDialog.targetNewBrowserItemId">
+            <summary>
+            The target new browser item id.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.InsertLinkDialog.targetCustomItemId">
+            <summary>
+            The target custom item id.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.DataSource">
+            <summary>
+            Gets or sets the DataSource.
+            </summary>
+            <value>
+            The DataSource.
+            </value>    
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.TreeViewToggleButton">
+            <summary>
+            Gets or sets the TreeViewToggleButton.
+            </summary>
+            <value>
+            The tree view.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.InsertEmailButton">
+            <summary>
+            Gets or sets the insert email button.
+            </summary>
+            <value>
+            The insert email button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.InsertAnchorButton">
+            <summary>
+            Gets or sets the anchor email button.
+            </summary>
+            <value>
+            The anchor email button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.TextDescription">
+            <summary>
+            Gets or sets the Text Description textbox.
+            </summary>
+            <value>
+            The Text Description textbox.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.Target">
+            <summary>
+            Gets or sets the target combo box.
+            </summary>
+            <value>
+            The target combo box.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.AltText">
+            <summary>
+            Gets or sets the Alt Text textbox.
+            </summary>
+            <value>
+            The Alt Text textbox.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.QueryString">
+            <summary>
+            Gets or sets the QueryString textbox.
+            </summary>
+            <value>
+            The QueryString textbox.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.StyleClass">
+            <summary>
+            Gets or sets the StyleClass textbox.
+            </summary>
+            <value>
+            The StyleClass textbox.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.CustomUrl">
+            <summary>
+            Gets or sets the CustomUrl textbox.
+            </summary>
+            <value>
+            The custom URL.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.TargetLoadedValue">
+            <summary>
+            Gets or sets the TargetLoadedValue control.
+            </summary>
+            <value>
+            The target loaded value.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.TargetActiveBrowserItemId">
+            <summary>
+            Gets or sets the item ID, which is defined as Active Brower in Target dropdown list.
+            </summary>
+            <value>
+            The item id.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.TargetNewBrowserItemId">
+            <summary>
+            Gets or sets the item ID, which is defined as New Brower in Target dropdown list.
+            </summary>
+            <value>
+            The item id.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialog.TargetCustomItemId">
+            <summary>
+            Gets or sets the item ID, which is defined as Custom in Target dropdown list.
+            </summary>
+            <value>
+            The item id.
+            </value>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertLinkDialog.Initialize">
+            <summary>
+            Executes this instance.
+            </summary>
+            
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertLinkDialog.GetXmlAttributeValue(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Gets the XML attribute value.
+            </summary>
+            <param name="element">The XML Element to look for a certain attribute on.</param>
+            <param name="attrName">Name of the attribute.</param>
+            <returns>Attributes value. If attribute wasn't found it just returns an empty string.</returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertLinkDialog.ReadQueryParamsAndUpdatePlaceholders">
+            <summary>
+            Reads the root parameter and set root item identifier.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertLinkDialog.SetupTargetDropbox(System.Xml.Linq.XElement)">
+            <summary>
+            Setups the target dropbox.
+            </summary>
+            <param name="fieldContent">Content of the field.</param>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.InsertLinkDialogTree">
+            <summary>
+            InsertLinkDialogTree class
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.InsertLinkDialogTree.targetActiveBrowserItemId">
+            <summary>
+            The target active browser item id.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.InsertLinkDialogTree.targetNewBrowserItemId">
+            <summary>
+            The target new browser item id.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.InsertLinkDialogTree.targetCustomItemId">
+            <summary>
+            The target custom item id.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.InsertLinkDialogTree.targetParent">
+            <summary>
+            The target active browser item id.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.InsertLinkDialogTree.targetBlank">
+            <summary>
+            The target new browser item id.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Speak.Applications.InsertLinkDialogTree.targetTop">
+            <summary>
+            The target top item id.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.DataSource">
+            <summary>
+            Gets or sets the DataSource.
+            </summary>
+            <value>
+            The DataSource.
+            </value>    
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.TreeView">
+            <summary>
+            Gets or sets the tree view.
+            </summary>
+            <value>
+            The tree view.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.ListViewToggleButton">
+            <summary>
+            Gets or sets the list view toggle button.
+            </summary>
+            <value>
+            The list view toggle button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.TreeViewToggleButton">
+            <summary>
+            Gets or sets the tree view toggle button.
+            </summary>
+            <value>
+            The tree view toggle button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.InsertEmailButton">
+            <summary>
+            Gets or sets the insert email button.
+            </summary>
+            <value>
+            The insert email button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.InsertAnchorButton">
+            <summary>
+            Gets or sets the insert anchor button.
+            </summary>
+            <value>
+            The insert anchor button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.TextDescription">
+            <summary>
+            Gets or sets the Text Description textbox.
+            </summary>
+            <value>
+            The Text Description textbox.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.AnchorText">
+            <summary>
+            Gets or sets the anchor text.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.Target">
+            <summary>
+            Gets or sets the target combo box.
+            </summary>
+            <value>
+            The target combo box.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.AltText">
+            <summary>
+            Gets or sets the Alt Text textbox.
+            </summary>
+            <value>
+            The Alt Text textbox.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.QueryString">
+            <summary>
+            Gets or sets the QueryString textbox.
+            </summary>
+            <value>
+            The QueryString textbox.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.StyleClass">
+            <summary>
+            Gets or sets the StyleClass textbox.
+            </summary>
+            <value>
+            The StyleClass textbox.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.CustomUrl">
+            <summary>
+            Gets or sets the CustomUrl textbox.
+            </summary>
+            <value>
+            The custom URL.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.TargetLoadedValue">
+            <summary>
+            Gets or sets the TargetLoadedValue control.
+            </summary>
+            <value>
+            The target loaded value.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.TargetActiveBrowserItemId">
+            <summary>
+            Gets or sets the item ID, which is defined as Active Brower in Target dropdown list.
+            </summary>
+            <value>
+            The item id.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.TargetNewBrowserItemId">
+            <summary>
+            Gets or sets the item ID, which is defined as New Brower in Target dropdown list.
+            </summary>
+            <value>
+            The item id.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertLinkDialogTree.TargetCustomItemId">
+            <summary>
+            Gets or sets the item ID, which is defined as Custom in Target dropdown list.
+            </summary>
+            <value>
+            The item id.
+            </value>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertLinkDialogTree.Initialize">
+            <summary>
+            Executes this instance.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertLinkDialogTree.GetXmlAttributeValue(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Gets the XML attribute value.
+            </summary>
+            <param name="element">The XML Element to look for a certain attribute on.</param>
+            <param name="attrName">Name of the attribute.</param>
+            <returns>Attributes value. If attribute wasn't found it just returns an empty string.</returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertLinkDialogTree.ReadQueryParamsAndUpdatePlaceholders">
+            <summary>
+            Reads the root parameter and update root placeholders.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertLinkDialogTree.SetupTargetDropbox(System.Xml.Linq.XElement)">
+            <summary>
+            Setups the target dropbox.
+            </summary>
+            <param name="fieldContent">Content of the field.</param>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.InsertSitecoreItemDialog">
+            <summary>
+            InsertSitecoreItemDialog class
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertSitecoreItemDialog.DataSource">
+            <summary>
+            Gets or sets the DataSource.
+            </summary>
+            <value>
+            The DataSource.
+            </value>    
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertSitecoreItemDialog.TreeViewToggleButton">
+            <summary>
+            Gets or sets the TreeViewToggleButton.
+            </summary>
+            <value>
+            The tree view.
+            </value>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertSitecoreItemDialog.Initialize">
+            <summary>
+            Executes this instance.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.InsertSitecoreItemDialogTree">
+            <summary>
+            InsertSitecoreItemDialogTree class
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertSitecoreItemDialogTree.TreeView">
+            <summary>
+            Gets or sets the tree view.
+            </summary>
+            <value>
+            The tree view.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertSitecoreItemDialogTree.ListViewToggleButton">
+            <summary>
+            Gets or sets the list view toggle button.
+            </summary>
+            <value>
+            The list view toggle button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.InsertSitecoreItemDialogTree.TreeViewToggleButton">
+            <summary>
+            Gets or sets the tree view toggle button.
+            </summary>
+            <value>
+            The tree view toggle button.
+            </value>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.InsertSitecoreItemDialogTree.Initialize">
+            <summary>
+            Executes this instance.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.Pipelines.InitializeLayout.AuthorizeXdbAccess">
+            <summary>
+            Defines the AuthorizeXdbAccess type.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.Pipelines.InitializeLayout.AuthorizeXdbAccess.Process(Sitecore.Web.Pipelines.InitializeSpeakLayout.InitializeSpeakLayoutArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.SelectMediaDialog">
+            <summary>
+            SelectMediaDialogTree class
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialog.DataSource">
+            <summary>
+            Gets or sets the DataSource.
+            </summary>
+            <value>
+            The DataSource.
+            </value>    
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialog.TreeViewToggleButton">
+            <summary>
+            Gets or sets the TreeViewToggleButton.
+            </summary>
+            <value>
+            The tree view.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialog.UploadButton">
+            <summary>
+            Gets or sets the upload button.
+            </summary>
+            <value>
+            The upload button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialog.Menu">
+            <summary>
+            Gets or sets the Menu rendering.
+            </summary>
+            <value>
+            The Menu rendering.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialog.MediaFolderValueText">
+            <summary>
+            Gets or sets the media folder value text.
+            </summary>
+            <value>
+            The media folder value text.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialog.MediaResultsListControl">
+            <summary>
+            Gets or sets the media results list control.
+            </summary>
+            <value>
+            The media results list control.
+            </value>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialog.GetDisplayPath(System.String,System.String,System.Boolean)">
+            <summary>
+            Gets the media display value.
+            </summary>
+            <param name="root">The root.</param>
+            <param name="folder">The folder.</param>
+            <param name="showFullPath">if set to <c>true</c> [show full path].</param>
+            <returns>
+            The last folder in the given Path or the entire path if it begins with "~".
+            </returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialog.GetMediaItemFromQueryString(System.String)">
+            <summary>
+            Gets the media item from query string.
+            </summary>
+            <param name="itemUri">The item URI.</param>
+            <returns>The media item</returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialog.SetUrlContentDatabase(System.String,System.String)">
+            <summary>
+            Sets the URL content database.
+            </summary>
+            <param name="navigateUrl">The navigate URL.</param>
+            <param name="contentDbName">Name of the content database.</param>
+            <returns>The navigateUrl</returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialog.FillCommandParts(System.String,System.String@,System.String@,System.String@,System.String@)">
+            <summary>
+            The fill command parts.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="url">The url.</param>
+            <param name="before">The before.</param>
+            <param name="after">The after.</param>
+            <param name="separator">The separator.</param>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialog.GetShowFullPath(System.String)">
+            <summary>
+            Gets the show full path.
+            </summary>
+            <param name="folder">The folder parameter.</param>
+            <returns>True if page should show full path.</returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialog.RedirectOnItembucketsDisabled(Sitecore.Data.Items.Item)">
+            <summary>
+            Redirects the to the SelectMediaViaTreeDialog if ItemBuckets is disabled.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialog.Initialize">
+            <summary>
+            Executes this instance.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialog.GetRootItem(Sitecore.Data.Items.Item)">
+            <summary>
+            Get the root item for select media dialog.
+            </summary>
+            <param name="initialRootItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialog.GetItem(System.String,Sitecore.Data.Database)">
+            <summary>
+             Get Item by itemUri or Guid
+            </summary>
+            <param name="itemString"></param>
+            <param name="getItem"></param>
+            <param name="database"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialog.ClientHostDatabase">
+            <summary>
+            Proxy method to Gets the client host database.
+            </summary>
+            <value>
+            The client host database.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialog.ClientHostContentDatabase">
+            <summary>
+            Proxy method to Gets the client host content database.
+            </summary>
+            <value>
+            The client host content database.
+            </value>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.SelectMediaDialogTree">
+            <summary>
+            SelectMediaDialogTree class
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialogTree.TreeView">
+            <summary>
+            Gets or sets the tree view.
+            </summary>
+            <value>
+            The tree view.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialogTree.ListViewToggleButton">
+            <summary>
+            Gets or sets the list view toggle button.
+            </summary>
+            <value>
+            The list view toggle button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialogTree.TreeViewToggleButton">
+            <summary>
+            Gets or sets the tree view toggle button.
+            </summary>
+            <value>
+            The tree view toggle button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialogTree.UploadButton">
+            <summary>
+            Gets or sets the upload button.
+            </summary>
+            <value>
+            The upload button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.SelectMediaDialogTree.MediaFolderValueText">
+            <summary>
+            Gets or sets the media folder value text.
+            </summary>
+            <value>
+            The media folder value text.
+            </value>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialogTree.SetTreeRootAndSelectedItem(Sitecore.Mvc.Presentation.Rendering,Sitecore.Data.Items.Item,Sitecore.Data.Items.Item)">
+            <summary>
+            Sets the tree root and selected item.
+            </summary>
+            <param name="treeView">The tree view.</param>
+            <param name="rootItem">The root item.</param>
+            <param name="folderItem">The folder item.</param>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialogTree.Initialize">
+            <summary>
+            Executes this instance.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.SelectMediaDialogTree.GetPreLoadPath(System.String,Sitecore.Data.Items.Item)">
+            <summary>
+            Gets the pre load path.
+            </summary>
+            <param name="rootId">The root identifier.</param>
+            <param name="folderItem">The folder item.</param>
+            <returns>The preload path</returns>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.sitecore.shell.client.Applications.LaunchPad">
+            <summary>
+            The app launcher.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.sitecore.shell.client.Applications.LaunchPad.MessageBar">
+            <summary>
+            Gets or sets the message bar.
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.sitecore.shell.client.Applications.LaunchPad.Umbrella">
+            <summary>
+            Gets or sets the umbrella.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.sitecore.shell.client.Applications.LaunchPad.Initialize">
+            <summary>
+            The initialize.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Speak.Applications.UploadMediaDialog">
+            <summary>
+              UploadMediaDialog class
+            </summary>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.UploadMediaDialog.BackButton">
+            <summary>
+              Gets or sets the TreeViewToggleButton.
+            </summary>
+            <value>
+              The BackButton button.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.UploadMediaDialog.DestinationValueText">
+            <summary>
+            Gets or sets the destination value text.
+            </summary>
+            <value>
+            The destination value text.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.UploadMediaDialog.Uploader">
+            <summary>
+            Gets or sets the uploader.
+            </summary>
+            <value>
+            The uploader.
+            </value>
+        </member>
+        <member name="P:Sitecore.Speak.Applications.UploadMediaDialog.TreeView">
+            <summary>
+            Gets or sets the tree view.
+            </summary>
+            <value>
+            The tree view.
+            </value>
+        </member>
+        <member name="M:Sitecore.Speak.Applications.UploadMediaDialog.Initialize">
+            <summary>
+              Executes this instance.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Pipelines.HttpRequest.OverrideDialogs">
+            <summary>
+            The override dialogs.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Pipelines.HttpRequest.OverrideDialogs.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Sitecore.Pipelines.HttpRequest.OverrideDialogs"/> class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Pipelines.HttpRequest.OverrideDialogs.Process(Sitecore.Pipelines.PreprocessRequest.PreprocessRequestArgs)">
+            <summary>
+            Processes the specified args.
+            </summary>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:Sitecore.Pipelines.HttpRequest.OverrideDialogs.ReadOverrides">
+            <summary>
+              Reads the overrides.
+            </summary>
+        </member>
+        <member name="T:Sitecore.Pipelines.HttpRequest.OverrideXmlControl">
+            <summary>
+            The override xml control.
+            </summary>
+        </member>
+        <member name="F:Sitecore.Pipelines.HttpRequest.OverrideXmlControl.Overrides">
+            <summary>
+            The overrides field.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Pipelines.HttpRequest.OverrideXmlControl.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Sitecore.Pipelines.HttpRequest.OverrideXmlControl"/> class. 
+            Commands the manager.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Pipelines.HttpRequest.OverrideXmlControl.Process(Sitecore.Pipelines.PreprocessRequest.PreprocessRequestArgs)">
+            <summary>
+            Processes the specified args.
+            </summary>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:Sitecore.Pipelines.HttpRequest.OverrideXmlControl.ReadOverrides">
+            <summary>
+            Reads the overrides.
+            </summary>
+        </member>
+    </members>
+</doc>

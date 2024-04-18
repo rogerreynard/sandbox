@@ -1,0 +1,2115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.ItemWebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.ItemWebApi.Actions.Action">
+            <summary>
+            Defines a list of members that an action should implement.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Actions.Action.responseOutputBuilder">
+            <summary>
+            The response output builder.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.Action.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Actions.Action"/> class.
+            </summary>
+            <param name="name">The action name.</param>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Actions.Action.Name">
+            <summary>
+            Gets or sets the action name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Actions.Action.ResponseOutputBuilder">
+            <summary>
+            Gets or sets the response output builder.
+            </summary>
+            <value>
+            The response output builder.
+            </value>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.Action.Process(System.Web.HttpContext)">
+            <summary>
+            Performs the action for the specified HTTP context.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Actions.AuthenticateAction">
+            <summary>
+            Represents an action that checks whether the current user is authenticated.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.AuthenticateAction.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Actions.AuthenticateAction"/> class.
+            </summary>
+            <param name="name">The action name.</param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.AuthenticateAction.Process(System.Web.HttpContext)">
+            <summary>
+            Performs the action for the specified HTTP context.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Actions.GetPublicKeyAction">
+            <summary>
+            Represents an action that returns the public key.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.GetPublicKeyAction.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Actions.GetPublicKeyAction"/> class.
+            </summary>
+            <param name="name">The action name.</param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.GetPublicKeyAction.Process(System.Web.HttpContext)">
+            <summary>
+            Performs the action for the specified HTTP context.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Actions.GetRenderingHtmlAction">
+            <summary>
+            Represents an action that returns html of the specified rendering.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.GetRenderingHtmlAction.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Actions.GetRenderingHtmlAction"/> class.
+            </summary>
+            <param name="name">The action name.</param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.GetRenderingHtmlAction.Process(System.Web.HttpContext)">
+            <summary>
+            Performs the action for the specified HTTP context.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.GetRenderingHtmlAction.IsAccessAllowed">
+            <summary>
+            Determines whether access to the current action is allowed.
+            </summary>
+            <returns>
+            <c>true</c> if access to the current action is allowed; otherwise <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Actions.GetSignedMediaUrlAction">
+            <summary>
+            Represents an action that returns signed media URL for the specified media URL.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.GetSignedMediaUrlAction.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Actions.GetSignedMediaUrlAction"/> class.
+            </summary>
+            <param name="name">The action name.</param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.GetSignedMediaUrlAction.Process(System.Web.HttpContext)">
+            <summary>
+            Performs the action for the specified HTTP context.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.GetSignedMediaUrlAction.GetSignedMediaUrl(System.String)">
+            <summary>
+            Gets the signed media URL.
+            </summary>
+            <param name="mediaUrlToSign">The media URL to sign.</param>
+            <returns>The signed media URL.</returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.GetSignedMediaUrlAction.IsMediaUrlValid(System.String)">
+            <summary>
+            Determines whether the specified media URL is valid.
+            </summary>
+            <param name="mediaUrl">The media URL.</param>
+            <returns>
+            <c>true</c> if the specified media URL is valid; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Actions.GetSignedMediaUrlAction.IsAccessAllowed">
+            <summary>
+            Determines whether access to the current action is allowed.
+            </summary>
+            <returns>
+            <c>true</c> if access to the current action is allowed; otherwise <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.BadRequestException">
+            <summary>
+            An exception to indicate a bad request from a client to the Item Web API.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.BadRequestException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.BadRequestException"/> class.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Configuration.ActionFactory">
+            <summary>
+            Creates action objects based on the configuration.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Configuration.ActionFactory.Configuration">
+            <summary>
+            The configuration.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Configuration.ActionFactory.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Sitecore.ItemWebApi.Configuration.ActionFactory"/> class. 
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Configuration.ActionFactory.GetAction(System.String)">
+            <summary>
+            Gets an action object for the specified action name.
+            </summary>
+            <param name="actionName">Name of the action.</param>
+            <returns>
+            The action object if there is a configuration for the specified action name; otherwise <c>null</c>.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Configuration.ItemWebApiConfiguration">
+            <summary>
+            Represents a configuration of Item Web API.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Configuration.ItemWebApiConfiguration.actions">
+            <summary>
+            A list of available actions.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Configuration.ItemWebApiConfiguration.Actions">
+            <summary>
+            Gets a list of available actions.
+            </summary>
+            <value>
+            A list of available actions.
+            </value>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Configuration.ItemWebApiConfiguration.AddAction(Sitecore.ItemWebApi.Actions.Action)">
+            <summary>
+            Adds the specified action to the list.
+            </summary>
+            <param name="action">The action.</param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Configuration.Mode">
+            <summary>
+            The mode
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Configuration.Mode.Off">
+            <summary>
+            The off.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Configuration.Mode.StandardSecurity">
+            <summary>
+            The standard security.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Configuration.Mode.AdvancedSecurity">
+            <summary>
+            The advanced security.
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Configuration.RuntimeSettings">
+            <summary>
+            The runtime settings
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Configuration.RuntimeSettings.Default">
+            <summary>
+            The default.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Configuration.RuntimeSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Configuration.RuntimeSettings"/> class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Configuration.RuntimeSettings.#ctor(Sitecore.Web.SiteInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Configuration.RuntimeSettings"/> class.
+            </summary>
+            <param name="siteInfo">
+            The site info.
+            </param>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Configuration.RuntimeSettings.Access">
+            <summary>
+            Gets or sets Access.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Configuration.RuntimeSettings.AnonymousAcessAllowed">
+            <summary>
+            Gets or sets a value indicating whether AnonymousAcessAllowed.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Configuration.RuntimeSettings.Mode">
+            <summary>
+            Gets or sets Mode.
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Configuration.Settings">
+            <summary>
+            The settings.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Configuration.Settings.ItemVersionHttpParameterName">
+            <summary>
+            Gets the item version HTTP parameter name.
+            </summary>
+            <value>
+            The item version HTTP parameter.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Configuration.Settings.LanguageHttpParameterName">
+            <summary>
+            Gets the language HTTP parameter name.
+            </summary>
+            <value>
+            The language HTTP parameter.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Configuration.Settings.OutputExceptionDetails">
+            <summary>
+            Gets a value indicating whether an exception output must contain an exception type and a stack trace.
+            </summary>
+            <value>
+            <c>true</c> if an exception output must contain an exception type and a stack trace; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Configuration.Settings.Security">
+            <summary>
+            Defines the security settings.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Configuration.Settings.Security.FieldRemoteReadAccessRight">
+            <summary>
+            The name of the field remote read access right.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Configuration.Settings.Security.IsEncryptedHttpHeader">
+            <summary>
+            Is encrypted HHTP header
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Configuration.Settings.Security.UserNameHttpHeader">
+            <summary>
+            User name HHTP header name
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Configuration.Settings.Security.UserPasswordHttpHeader">
+            <summary>
+            Password HHTP header name
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Context">
+            <summary>
+            The context.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Context.settings">
+            <summary>
+            The runtime settings
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Context.Current">
+            <summary>
+            Gets or sets the current.
+            </summary>
+            <value>
+            The current.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Context.Database">
+            <summary>
+            Gets or sets the database.
+            </summary>
+            <value>
+            The database.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Context.HttpContext">
+            <summary>
+            Gets or sets the HTTP context.
+            </summary>
+            <value>
+            The HTTP context.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Context.Item">
+            <summary>
+            Gets or sets the item.
+            </summary>
+            <value>
+            The item.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Context.Language">
+            <summary>
+            Gets or sets the language.
+            </summary>
+            <value>
+            The language.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Context.Serializer">
+            <summary>
+            Gets or sets the serializer.
+            </summary>
+            <value>
+            The serializer.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Context.Settings">
+            <summary>
+            Gets or sets the settings
+            </summary>
+            <value>
+            The serializer.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Context.Version">
+            <summary>
+            Gets or sets the version.
+            </summary>
+            <value>
+            The version.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Context.ResponseOutputBuilder">
+            <summary>
+            Gets or sets the response output builder.
+            </summary>
+            <value>
+            The response output builder.
+            </value>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Dynamic">
+            <summary>
+            The dynamic object.
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.ErrorReporter">
+            <summary>
+            The error reporter.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.ErrorReporter.SendErrorMessage(System.Exception)">
+            <summary>
+            Sends the error message.
+            </summary>
+            <param name="exception">
+            The exception.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.ErrorReporter.GetStatusCode(System.Exception)">
+            <summary>
+            Gets the status code.
+            </summary>
+            <param name="exception">The exception.</param>
+            <returns>The status code.</returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Extensions.ClassExtensions">
+            <summary>
+            Class extensions
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Extensions.ClassExtensions.DisableCaching(System.Web.HttpResponse)">
+            <summary>
+            Disable HTTP response caching (HTTP header)
+            </summary>
+            <param name="response">
+            HttpResponse instance.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Extensions.EnumExtensions">
+            <summary>
+            Enum extensions
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Extensions.EnumExtensions.TryParse``1(System.Enum,System.String,``0@)">
+            <summary>
+            The try parse.
+            </summary>
+            <param name="enum">
+            The enum.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="result">
+            The result.
+            </param>
+            <typeparam name="T">
+            </typeparam>
+            <returns>
+            The try parse.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Logger">
+            <summary>
+            The logger.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Logger.Error(System.Exception)">
+            <summary>
+            Logs the error.
+            </summary>
+            <param name="exception">
+            The exception.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Logger.Info(System.String)">
+            <summary>
+            Logs the info.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Logger.Warn(System.String)">
+            <summary>
+            Logs the warn.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Logger.FormatMessage(System.String)">
+            <summary>
+            Formats the message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <returns>
+            The formatted message.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.PipelineArgs">
+            <summary>
+            The pipeline args.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.PipelineArgs.context">
+            <summary>
+            The context.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.PipelineArgs.Context">
+            <summary>
+            Gets or sets Context.
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Create.CreateItem">
+            <summary>
+            The item creator.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Create.CreateItem.Process(Sitecore.ItemWebApi.Pipelines.Create.CreateArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Create.CreateItem.CreateNewItem(Sitecore.Data.Items.Item,Sitecore.Data.Items.Item,System.String)">
+            <summary>
+            Creates the new item.
+            </summary>
+            <param name="parent">
+            The parent.
+            </param>
+            <param name="templateItem">
+            The template item.
+            </param>
+            <param name="name">
+            The name.
+            </param>
+            <returns>
+            The new item.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Create.TryUpdate">
+            <summary>
+            A processor trying to update the created items.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Create.TryUpdate.Process(Sitecore.ItemWebApi.Pipelines.Create.CreateArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Create.SetResult">
+            <summary>
+            A processor setting the result of the item creation.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Create.SetResult.Process(Sitecore.ItemWebApi.Pipelines.Create.CreateArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Create.CreateArgs">
+            <summary>
+            The create operation arguments.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Pipelines.Create.CreateArgs.name">
+            <summary>
+            The name.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Pipelines.Create.CreateArgs.templateItem">
+            <summary>
+            The template item.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Create.CreateArgs.#ctor(Sitecore.Data.Items.Item[],System.String,Sitecore.Data.Items.Item)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Pipelines.Create.CreateArgs"/> class.
+            </summary>
+            <param name="scope">
+            The scope.
+            </param>
+            <param name="name">
+            The name.
+            </param>
+            <param name="templateItem">
+            The template item.
+            </param>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.Create.CreateArgs.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+            <exception cref="T:Sitecore.Exceptions.InvalidItemNameException">
+            <c>InvalidItemNameException</c>.
+            </exception>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.Create.CreateArgs.TemplateItem">
+            <summary>
+            Gets or sets the template item.
+            </summary>
+            <value>
+            The template item.
+            </value>
+            <exception cref="T:Sitecore.Exceptions.InvalidItemException">
+            Item is not a template.
+            </exception>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Create.CreateProcessor">
+            <summary>
+            The create operation processor.
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Delete.DeleteScope">
+            <summary>
+            The scope deleter.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Delete.DeleteScope.Process(Sitecore.ItemWebApi.Pipelines.Delete.DeleteArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Delete.DeleteArgs">
+            <summary>
+            The delete operation arguments.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Delete.DeleteArgs.#ctor(Sitecore.Data.Items.Item[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Pipelines.Delete.DeleteArgs"/> class.
+            </summary>
+            <param name="scope">The scope.</param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Delete.DeleteProcessor">
+            <summary>
+            The delete operation processor.
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.GetFields.GetFields">
+            <summary>
+            The field resolver.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetFields.GetFields.Process(Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetFields.GetFields.GetFieldIds">
+            <summary>
+            Gets the field IDs.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetFields.GetFields.SelectField(System.Collections.Generic.IEnumerable{Sitecore.Data.Fields.Field},System.String)">
+            <summary>
+            Selects the field.
+            </summary>
+            <param name="fields">
+            The fields.
+            </param>
+            <param name="fieldId">
+            The field ID.
+            </param>
+            <returns>
+            The field.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetFields.GetFields.SelectFields(Sitecore.Data.Items.Item,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Selects the fields.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <param name="fieldIds">
+            The field IDs.
+            </param>
+            <returns>
+            The selected fields.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetFields.GetFields.SelectFields(Sitecore.Data.Items.Item,Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsProcessor.PayloadMode)">
+            <summary>
+            Selects the item fields by the payload mode.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <param name="payload">
+            The payload mode.
+            </param>
+            <returns>
+            The selected fields.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetFields.GetFields.SelectFields(Sitecore.Data.Items.Item)">
+            <summary>
+            Selects the fields.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <returns>
+            The selected fields.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsArgs">
+            <summary>
+            The GetFields pipeline arguments.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsArgs.fields">
+            <summary>
+            The fields
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsArgs.Fields">
+            <summary>
+            Gets the fields.
+            </summary>
+            <value>
+            The fields.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsArgs.Item">
+            <summary>
+            Gets or sets the item.
+            </summary>
+            <value>
+            The item.
+            </value>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsArgs.AddField(Sitecore.Data.Fields.Field)">
+            <summary>
+            Adds the field.
+            </summary>
+            <param name="field">
+            The field.
+            </param>
+            <returns>
+             <c>true</c> if field was added succesfully; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsArgs.RemoveField(Sitecore.Data.Fields.Field)">
+            <summary>
+            Removes the field.
+            </summary>
+            <param name="field">
+            The field.
+            </param>
+            <returns>
+              <c>true</c> if field was removed succesfully; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsProcessor">
+            <summary>
+            The GetFields pipeline processor.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsProcessor.Payload">
+            <summary>
+            Gets the payload.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsProcessor.Process(Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.GetFields.GetFieldsProcessor.PayloadMode">
+            <summary>
+            The payload mode
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.GetProperties.GetProperties">
+            <summary>
+            The property resolver.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetProperties.GetProperties.Process(Sitecore.ItemWebApi.Pipelines.GetProperties.GetPropertiesArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.GetProperties.GetPropertiesArgs">
+            <summary>
+            The GetProperties pipeline arguments.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetProperties.GetPropertiesArgs.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Pipelines.GetProperties.GetPropertiesArgs"/> class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.GetProperties.GetPropertiesArgs.Item">
+            <summary>
+            Gets or sets the item.
+            </summary>
+            <value>
+            The item.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.GetProperties.GetPropertiesArgs.Properties">
+            <summary>
+            Gets the properties.
+            </summary>
+            <value>
+            The properties.
+            </value>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.GetProperties.GetPropertiesProcessor">
+            <summary>
+            The GetProperties pipeline processor.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.GetProperties.GetPropertiesProcessor.Process(Sitecore.ItemWebApi.Pipelines.GetProperties.GetPropertiesArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.HttpRequest.SetRuntimeSettings">
+            <summary>
+            Sets the runtime settings
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.SetRuntimeSettings.Process(Sitecore.Pipelines.HttpRequest.HttpRequestArgs)">
+            <summary>
+            The process.
+            </summary>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.HttpRequest.CheckMode">
+            <summary>
+            The ckeck mode processor.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.CheckMode.Process(Sitecore.Pipelines.HttpRequest.HttpRequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.HttpRequest.ResolveUserFromRequest">
+            <summary>
+            The resolve user from request.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.ResolveUserFromRequest.Process(Sitecore.Pipelines.HttpRequest.HttpRequestArgs)">
+            <summary>
+            Processes the specified args.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.ResolveUserFromRequest.GetCredentials(System.Web.HttpRequestBase)">
+            <summary>
+            The get credentials.
+            </summary>
+            <param name="request">
+            The request.
+            </param>
+            <returns>
+            The credentials.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.HttpRequest.ResolveLanguage">
+            <summary>
+            The resolve language processor
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.ResolveLanguage.Process(Sitecore.Pipelines.HttpRequest.HttpRequestArgs)">
+            <summary>
+            The process.
+            </summary>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.ResolveLanguage.GetLanguage(System.Web.HttpRequestBase)">
+            <summary>
+            Extracts the language name from the query string.
+            </summary>
+            <param name="request">
+            The request.
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.HttpRequest.HandleActionRequest">
+            <summary>
+            The system request handler.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.HandleActionRequest.Process(Sitecore.Pipelines.HttpRequest.HttpRequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.HandleActionRequest.IsActionRequest(System.Web.HttpRequestBase)">
+            <summary>
+            Determines whether the specified request is system.
+            </summary>
+            <param name="request">
+            The request.
+            </param>
+            <returns>
+            <c>true</c> if the specified request is system; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.HttpRequest.LaunchRequest">
+            <summary>
+            The Item Web API request launcher.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.LaunchRequest.Process(Sitecore.Pipelines.HttpRequest.HttpRequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.LaunchRequest.GetItemVersion">
+            <summary>
+            Gets the item version.
+            </summary>
+            <returns>
+            The item version.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.LaunchRequest.GetContextItem">
+            <summary>
+            Gets the context item.
+            </summary>
+            <returns>
+            The context item.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.HttpRequest.CatchError">
+            <summary>
+            The error catcher.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.HttpRequest.CatchError.Process(Sitecore.Pipelines.HttpRequest.HttpRequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.OperationArgs">
+            <summary>
+            The operation arguments.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.OperationArgs.#ctor(Sitecore.Data.Items.Item[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Pipelines.OperationArgs"/> class.
+            </summary>
+            <param name="scope">The scope.</param>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.OperationArgs.Result">
+            <summary>
+            Gets or sets the result.
+            </summary>
+            <value>
+            The result.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.OperationArgs.Scope">
+            <summary>
+            Gets or sets the scope.
+            </summary>
+            <value>
+            The scope.
+            </value>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.OperationProcessor`1">
+            <summary>
+            The operation processor.
+            </summary>
+            <typeparam name="T">
+            The operation arguments.
+            </typeparam>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.OperationProcessor`1.Process(`0)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.PreprocessRequest.RewriteUrl">
+            <summary>
+            Rewrites the URL.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.PreprocessRequest.RewriteUrl.Process(Sitecore.Pipelines.PreprocessRequest.PreprocessRequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.PreprocessRequest.RewriteUrl.GetVersion(System.String)">
+            <summary>
+            Gets the version.
+            </summary>
+            <param name="path">
+            The path.
+            </param>
+            <returns>
+            The version.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.PreprocessRequest.RewriteUrl.Rewrite(System.Web.HttpContextBase)">
+            <summary>
+            Rewrites the URL.
+            </summary>
+            <param name="context">
+            The HTTP context.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Read.GetResult">
+            <summary>
+            The response builder.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Read.GetResult.Process(Sitecore.ItemWebApi.Pipelines.Read.ReadArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Read.GetResult.GetFieldInfo(Sitecore.Data.Fields.Field)">
+            <summary>
+            Gets the field info.
+            </summary>
+            <param name="field">The field.</param>
+            <returns>The field info</returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Read.GetResult.GetFields(Sitecore.Data.Items.Item)">
+            <summary>
+            Gets the fields.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <returns>
+            The fields.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Read.GetResult.GetFieldValue(Sitecore.Data.Fields.Field)">
+            <summary>
+            Gets the field value.
+            </summary>
+            <param name="field">
+            The field.
+            </param>
+            <returns>
+            The field value.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Read.GetResult.GetProperties(Sitecore.Data.Items.Item)">
+            <summary>
+            Gets the properties.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <returns>
+            The properties.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Read.GetResult.GetResultSet(Sitecore.Data.Items.Item[])">
+            <summary>
+            Gets the result set.
+            </summary>
+            <param name="scope">
+            The scope.
+            </param>
+            <returns>
+            The result set.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Read.GetResult.CreateItemMock(Sitecore.Data.Items.Item)">
+            <summary>
+            Creates the item mock.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <returns>
+            The item mock.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Read.ReadArgs">
+            <summary>
+            The read operation arguments.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Read.ReadArgs.#ctor(Sitecore.Data.Items.Item[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Pipelines.Read.ReadArgs"/> class.
+            </summary>
+            <param name="scope">The scope.</param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Read.ReadProcessor">
+            <summary>
+            The read operation processor.
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Request.CheckParameters">
+            <summary>
+              CheckParameters validate parameters from request
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Pipelines.Request.CheckParameters.parameters">
+            <summary>
+            The parameters.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.Request.CheckParameters.Parameters">
+            <summary>
+            Gets the parameters.
+            </summary>
+            <value>The parameters.</value>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.CheckParameters.Process(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">The arguments.</param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.CheckParameters.GetParametersName(System.String)">
+            <summary>
+            Gets the name of the parameters.
+            </summary>
+            <param name="query">The query.</param>
+            <returns>List of parameter names.</returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.CheckParameters.GetErrorMessage(System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the error message.
+            </summary>
+            <param name="results">The results.</param>
+            <returns>Error message with invalid parameters.</returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Request.CheckSecurity">
+            <summary>
+            The security check.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.CheckSecurity.Process(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.CheckSecurity.CanEnterSite(Sitecore.Sites.SiteContext)">
+            <summary>
+            Determines whether the context user can enter the specified site.
+            </summary>
+            <param name="site">
+            The site.
+            </param>
+            <returns>
+            <c>true</c>, if the context user can enter the specified site; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.CheckSecurity.IsAccessGranted(Sitecore.ItemWebApi.Configuration.RuntimeSettings)">
+            <summary>
+            Determines whether the access is granted for the specified site.
+            </summary>
+            <param name="settings">
+            The site.
+            </param>
+            <returns>
+            <c>true</c>, if the access is granted for the specified site; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Request.HandleItemNotFound">
+            <summary>
+            Handles the case when an item specified with an item ID has not been found.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.HandleItemNotFound.Process(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Runs the processor.
+            This method checks whether an item exists in the database.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Request.ResolveItems">
+            <summary>
+            The item resolver.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveItems.Process(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveItems.GetItems(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Gets the items.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+            <returns>
+            The items.
+            </returns>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException"><c>BadQueryException</c>.</exception>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Request.ResolveScope">
+            <summary>
+            The scope resolver.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveScope.Process(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveScope.CanReadItem(Sitecore.Data.Items.Item)">
+            <summary>
+            Determines whether the user can read the specified item.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <returns>
+            <c>true</c> if the user can read the specified item; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveScope.GetAxes">
+            <summary>
+            Gets the axes.
+            </summary>
+            <returns>
+            The axes.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveScope.GetItemsByAxe(Sitecore.Data.Items.Item,System.String)">
+            <summary>
+            Gets the items by axe.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <param name="axe">
+            The axe.
+            </param>
+            <returns>
+            The items by axe.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Unknown axe value.
+            </exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveScope.GetScope(Sitecore.Data.Items.Item,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets the scope.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <param name="axes">
+            The axes.
+            </param>
+            <returns>
+            The scope.
+            </returns>
+            <exception cref="T:System.FormatException">
+            Unknown axe value.
+            </exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveScope.GetScope(Sitecore.Data.Items.Item[])">
+            <summary>
+            Gets the scope.
+            </summary>
+            <param name="items">
+            The items.
+            </param>
+            <returns>
+            The scope.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction">
+            <summary>
+            The action resolver.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction.Process(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="requestArgs">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction.ExecuteCreateRequest(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Executes the create request.
+            </summary>
+            <param name="args">The arguments.</param>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">Creation type cannot be defined.</exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction.ExecuteDeleteRequest(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Executes the delete request.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction.ExecuteReadRequest(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Executes the read request.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction.ExecuteUpdateRequest(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Executes the update request.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction.GetTemplateItem(System.String,Sitecore.Data.Database)">
+            <summary>
+            Gets the template item.
+            </summary>
+            <param name="template">
+            The template.
+            </param>
+            <param name="database">
+            The database.
+            </param>
+            <returns>
+            The template item.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction.CreateItems(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Creates the items.
+            </summary>
+            <param name="args">The arguments.</param>
+            <exception cref="T:System.ArgumentException">
+            Template item not found.
+            </exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction.CreateMediaItems(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Creates the media items.
+            </summary>
+            <param name="args">The arguments.</param>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            The specified location not found.
+            </exception>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            The specified location of media items is not in the Media Library.
+            </exception>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            Item name not specified (HTTP parameter 'name')."
+            </exception>
+            <exception cref="T:Sitecore.Exceptions.AccessDeniedException">
+            Access denied (item:create on 'path')
+            </exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction.GetMethod(Sitecore.ItemWebApi.Context)">
+            <summary>
+            Gets the method.
+            </summary>
+            <param name="context">The context.</param>
+            <returns>The method.</returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction.IsMediaCreation(Sitecore.ItemWebApi.Context)">
+            <summary>
+            Determines whether this request is a creation of media items.
+            </summary>
+            <param name="context">The context.</param>
+            <returns>
+            	<c>true</c> if this request is a creation of media items; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.ResolveAction.IsItemCreation(Sitecore.ItemWebApi.Context)">
+            <summary>
+            Determines whether this request is item creation.
+            </summary>
+            <param name="context">The context.</param>
+            <returns>
+              <c>true</c> if this request is item creation; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Request.SerializeResponse">
+            <summary>
+            The response serializer.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.SerializeResponse.Process(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Request.SendResponse">
+            <summary>
+            The response sender.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.SendResponse.Process(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Request.RequestArgs">
+            <summary>
+            The Item Web API request arguments.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.Request.RequestArgs.Items">
+            <summary>
+            Gets or sets the items.
+            </summary>
+            <value>
+            The items.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.Request.RequestArgs.ResponseText">
+            <summary>
+            Gets or sets the response text.
+            </summary>
+            <value>
+            The response text.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.Request.RequestArgs.Result">
+            <summary>
+            Gets or sets the result.
+            </summary>
+            <value>
+            The result.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Pipelines.Request.RequestArgs.Scope">
+            <summary>
+            Gets or sets the scope.
+            </summary>
+            <value>
+            The scope.
+            </value>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Request.RequestProcessor">
+            <summary>
+            The Item Web API request processor.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Request.RequestProcessor.Process(Sitecore.ItemWebApi.Pipelines.Request.RequestArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Update.UpdateScope">
+            <summary>
+            The scope updater.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Update.UpdateScope.Process(Sitecore.ItemWebApi.Pipelines.Update.UpdateArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Update.UpdateScope.CanUpdateField(Sitecore.Data.Fields.Field,Sitecore.ItemWebApi.Configuration.Mode)">
+            <summary>
+            Determines whether the specified field can be updated.
+            </summary>
+            <param name="field">
+            The field.
+            </param>
+            <param name="mode">
+            The mode.
+            </param>
+            <returns>
+            <c>true</c> if the specified field can be updated; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Update.ReadUpdatedScope">
+            <summary>
+            The reader of the updated scope.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Update.ReadUpdatedScope.Process(Sitecore.ItemWebApi.Pipelines.Update.UpdateArgs)">
+            <summary>
+            Runs the processor.
+            </summary>
+            <param name="arguments">
+            The arguments.
+            </param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Update.UpdateArgs">
+            <summary>
+            The update operation arguments.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Pipelines.Update.UpdateArgs.#ctor(Sitecore.Data.Items.Item[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.ItemWebApi.Pipelines.Update.UpdateArgs"/> class.
+            </summary>
+            <param name="scope">The scope.</param>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Pipelines.Update.UpdateProcessor">
+            <summary>
+            The update operation processor.
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Security.AccessType">
+            <summary>
+            The Access mode
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Security.AccessType.ReadOnly">
+            <summary>
+            ReadOnly
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Security.AccessType.ReadWrite">
+            <summary>
+             read-write
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Security.Cryptography.CryptoManager">
+            <summary>
+            The crypto manager.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Security.Cryptography.CryptoManager.data">
+            <summary>
+            The data.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Security.Cryptography.CryptoManager.Provider">
+            <summary>
+            Gets the provider.
+            </summary>
+            <value>
+            The provider.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Security.Cryptography.CryptoManager.Providers">
+            <summary>
+            Gets all providers.
+            </summary>
+            <value>
+            The providers.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Security.Cryptography.CryptoManager.PublicKey">
+            <summary>
+            Gets the public key.
+            </summary>
+            <value>
+            The public key.
+            </value>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Cryptography.CryptoManager.Decrypt(System.String)">
+            <summary>
+            Decrypts the specified message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <returns>
+            The decrypted message.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Cryptography.CryptoManager.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypts the specified message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="key">
+            The key.
+            </param>
+            <returns>
+            The encrypted message.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Security.Cryptography.PublicKeyCryptoProvider">
+            <summary>
+            The public key crypto provider.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Security.Cryptography.PublicKeyCryptoProvider.PublicKey">
+            <summary>
+            Gets the public key.
+            </summary>
+            <value>
+            The public key.
+            </value>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Cryptography.PublicKeyCryptoProvider.Decrypt(System.String)">
+            <summary>
+            Decrypts the specified message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <returns>
+            The decrypted message.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Cryptography.PublicKeyCryptoProvider.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypts the specified message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="key">
+            The key.
+            </param>
+            <returns>
+            The encrypted message.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Security.Cryptography.PublicKeyCryptoProviderCollection">
+            <summary>
+            The public key crypto provider collection.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Security.Cryptography.PublicKeyCryptoProviderCollection.Item(System.String)">
+            <summary>
+            Gets the <see cref="T:Sitecore.ItemWebApi.Security.Cryptography.PublicKeyCryptoProvider"/> with the specified name.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <value>
+            The public key crypto provider.
+            </value>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Security.Cryptography.RSAProvider">
+            <summary>
+            The RSA provider.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Security.Cryptography.RSAProvider.keyContainerName">
+            <summary>
+            The key container name.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Security.Cryptography.RSAProvider.keyLength">
+            <summary>
+            The key length.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Security.Cryptography.RSAProvider.publicKey">
+            <summary>
+            The public key.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Security.Cryptography.RSAProvider.rsaCryptoService">
+            <summary>
+            The RSA crypto service.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Security.Cryptography.RSAProvider.CryptoService">
+            <summary>
+            Gets the crypto service.
+            </summary>
+            <value>
+            The crypto service.
+            </value>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Security.Cryptography.RSAProvider.PublicKey">
+            <summary>
+            Gets the public key.
+            </summary>
+            <value>
+            The public key.
+            </value>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Cryptography.RSAProvider.Decrypt(System.String)">
+            <summary>
+            Decrypts the specified message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <returns>
+            The decrypted message.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Cryptography.RSAProvider.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypts the specified message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="key">
+            The key.
+            </param>
+            <returns>
+            The encrypted message.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Cryptography.RSAProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes the provider.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="config">
+            The config.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            The name of the provider is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The name of the provider has a length of zero.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            An attempt is made to call <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)"/> on a provider after the provider has already been initialized.
+            </exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Cryptography.RSAProvider.GetCryptoService">
+            <summary>
+            Gets the crypto service.
+            </summary>
+            <returns>
+            The crypto service.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Security.Extensions.FieldExstensions">
+            <summary>
+            The field exstensions.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Extensions.FieldExstensions.CanRemoteRead(Sitecore.Data.Fields.Field)">
+            <summary>
+            Determines whether the context user can read remotely the specified field.
+            </summary>
+            <param name="field">
+            The field.
+            </param>
+            <returns>
+            <c>true</c> if the context user can read remotely the specified field; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Extensions.FieldExstensions.CanRemoteRead(Sitecore.Data.Fields.Field,Sitecore.Security.Accounts.Account)">
+            <summary>
+            Determines whether the context user can read remotely the specified field.
+            </summary>
+            <param name="field">
+            The field.
+            </param>
+            <param name="account">
+            The account.
+            </param>
+            <returns>
+            <c>true</c> if the context user can read remotely the specified field; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Security.Extensions.UserExtensions">
+            <summary>
+            The user extensions class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Extensions.UserExtensions.IsAuthenticatedForDomain(Sitecore.Security.Accounts.User)">
+            <summary>
+            The is authenticated for domain.
+            </summary>
+            <param name="user">
+            The user.
+            </param>    
+            <returns>
+            The is authenticated for domain.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Security.Extensions.UserExtensions.IsAuthenticatedForDomain(Sitecore.Security.Accounts.User,Sitecore.Security.Domains.Domain)">
+            <summary>
+            The is authenticated for domain.
+            </summary>
+            <param name="user">
+            The user.
+            </param>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The is authenticated for domain.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Serialization.ISerializer">
+            <summary>
+            The interface of serializers.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Serialization.ISerializer.SerializedDataMediaType">
+            <summary>
+            Gets the the media type of serialized data.
+            </summary>
+            <example>
+            text/html
+            </example>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Serialization.ISerializer.Serialize(System.Object)">
+            <summary>
+            Serializes the specified value.
+            </summary>
+            <param name="value">
+            The value.
+            </param>
+            <returns>
+            The response text.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Serialization.JsonSerializer">
+            <summary>
+            The JSON serializer.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Serialization.JsonSerializer.SerializedDataMediaType">
+            <summary>
+            Gets the media type of serialized data.
+            </summary>
+            <example>
+            text/html
+            </example>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Serialization.JsonSerializer.Serialize(System.Object)">
+            <summary>
+            Serializes the specified value.
+            </summary>
+            <param name="value">
+            The value.
+            </param>
+            <returns>
+            The response text.
+            </returns>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Web.ActionHandler">
+            <summary>
+            The action handler.
+            </summary>
+        </member>
+        <member name="F:Sitecore.ItemWebApi.Web.ActionHandler.context">
+            <summary>
+            The HTTP context.
+            </summary>
+        </member>
+        <member name="P:Sitecore.ItemWebApi.Web.ActionHandler.IsReusable">
+            <summary>
+            Gets a value indicating whether another request can use the <see cref="T:System.Web.IHttpHandler"/> instance.
+            </summary>
+            <returns>
+            <c>true</c> if the <see cref="T:System.Web.IHttpHandler"/> instance is reusable; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.ActionHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            Processes the request.
+            </summary>
+            <param name="httpContext">
+            The HTTP context.
+            </param>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.ActionHandler.ActionNotFound">
+            <summary>
+            Sends the web response indicating that the action not found.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.ActionHandler.Error">
+            <summary>
+            Sends the web response indicating that an internal server error occurred.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.ActionHandler.GetAction">
+            <summary>
+            Gets the action.
+            </summary>
+            <returns>
+            The action.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.ActionHandler.ReportAccessIsNotGranted">
+            <summary>
+            Sends the web response indicating that action is not granted.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.ActionHandler.ReportBadRequest">
+            <summary>
+            Sends the web response indicating that action is not granted.
+            </summary>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Web.RenderingPreviewProvider">
+            <summary>
+            The rendering preview provider.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.RenderingPreviewProvider.GetPreviewHtml">
+            <summary>
+            Gets the rendering preview HTML.
+            </summary>
+            <returns>
+            The rendering preview HTML.
+            </returns>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            The specified rendering not found.
+            </exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.RenderingPreviewProvider.GetDatabase">
+            <summary>
+            Gets the database.
+            </summary>
+            <returns>
+            The database.
+            </returns>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            Database not specified.
+            </exception>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            The specified database not found.
+            </exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.RenderingPreviewProvider.GetItemId">
+            <summary>
+            Gets the item ID.
+            </summary>
+            <returns>
+            The item ID.
+            </returns>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            Item ID not specified.
+            </exception>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            Cannot parse the specified item ID.
+            </exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.RenderingPreviewProvider.GetItemVersion">
+            <summary>
+            Gets the item version.
+            </summary>
+            <returns>
+            The item version.
+            </returns>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            Cannot parse the specified item version.
+            </exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.RenderingPreviewProvider.GetParameters">
+            <summary>
+            Gets the parameters.
+            </summary>
+            <returns>
+            The parameters.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.RenderingPreviewProvider.GetRenderingId">
+            <summary>
+            Gets the rendering ID.
+            </summary>
+            <returns>
+            The rendering ID.
+            </returns>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            Rendering ID not specified.
+            </exception>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            Cannot parse the specified rendering ID.
+            </exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.RenderingPreviewProvider.GetRenderingItem(Sitecore.Data.Database,Sitecore.Globalization.Language)">
+            <summary>
+            Gets the rendering item.
+            </summary>
+            <param name="database">
+            The database.
+            </param>
+            <param name="language">
+            The language.
+            </param>
+            <returns>
+            The rendering item.
+            </returns>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            The specified rendering not found.
+            </exception>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.RenderingPreviewProvider.GetSourceItem(Sitecore.Data.Database,Sitecore.Globalization.Language)">
+            <summary>
+            Gets the source item.
+            </summary>
+            <param name="database">
+            The database.
+            </param>
+            <param name="language">
+            The language.
+            </param>
+            <returns>
+            The source item.
+            </returns>
+            <exception cref="T:Sitecore.ItemWebApi.BadRequestException">
+            The specified source item not found.
+            </exception>
+        </member>
+        <member name="T:Sitecore.ItemWebApi.Web.ResponseOutputBuilder">
+            <summary>
+            Represents default implementation of the methods to build the response output.
+            </summary>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.ResponseOutputBuilder.GetResult(System.Net.HttpStatusCode,System.Object)">
+            <summary>
+            Gets a result output for the response.
+            </summary>
+            <param name="statusCode">The status code.</param>
+            <param name="result">The result.</param>
+            <returns>
+            The result output for the response.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.ResponseOutputBuilder.GetError(System.Net.HttpStatusCode,System.Object)">
+            <summary>
+            Gets an error output for the response.
+            </summary>
+            <param name="statusCode">The status code.</param>
+            <param name="error">The error.</param>
+            <returns>
+            The error output for the response.
+            </returns>
+        </member>
+        <member name="M:Sitecore.ItemWebApi.Web.ResponseOutputBuilder.GetError(System.Net.HttpStatusCode,System.String)">
+            <summary>
+            Gets an error output for the response.
+            </summary>
+            <param name="statusCode">The status code.</param>
+            <param name="errorMessage">The error message.</param>
+            <returns>
+            The error output for the response.
+            </returns>
+        </member>
+    </members>
+</doc>

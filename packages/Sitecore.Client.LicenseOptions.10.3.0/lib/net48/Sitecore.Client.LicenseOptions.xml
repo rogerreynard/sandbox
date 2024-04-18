@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.Client.LicenseOptions</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.Client.LicenseOptions.StartUrlManager">
+            <summary>
+            Manager class for retrieving the start url set on a user profile
+            </summary>
+        </member>
+        <member name="M:Sitecore.Client.LicenseOptions.StartUrlManager.GetStartUrl(Sitecore.Security.Accounts.User)">
+            <summary>
+            Method for retrieving the start url set on a user profile
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Sitecore.Client.LicenseOptions.StartUrlManager.LaunchPadUrl">
+            <summary>
+            Url for the launch pad application
+            </summary>
+        </member>
+    </members>
+</doc>

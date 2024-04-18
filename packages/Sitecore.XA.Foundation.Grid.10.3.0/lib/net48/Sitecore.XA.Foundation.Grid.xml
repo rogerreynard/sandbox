@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XA.Foundation.Grid</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.XA.Foundation.Grid.Templates.GridParameters">
+            <summary>
+            Rendering Parameters
+            </summary>
+        </member>
+    </members>
+</doc>
