@@ -8,17 +8,19 @@ namespace Foundation.Personalization.Models
     {
         [JsonProperty("component_name")]
         public string ComponentName { get; set; }
-        [JsonProperty("condition_name")]
-        public string ConditionName { get; set; }
-        [JsonProperty("condition_order")]
-        public string ConditionOrder { get; set; }
-        [JsonProperty("condition_state")]
-        public string ConditionState { get; set; }
-        [JsonProperty("personalized_rendering")]
-        public string PersonalizedRendering { get; set; }
-        [JsonProperty("personalized_content")]
-        public string PersonalizedContent { get; set; }
-        [JsonProperty("personalized_content_id")]
-        public string PersonalizedContentId { get; set; }
+        [JsonProperty("rule_name")]
+        public string RuleName { get; set; }
+        [JsonProperty("rule_order")]
+        public string RuleOrder { get; set; }
+        [JsonProperty("action_state")]
+        public string ActionState { get; set; }
+        [JsonProperty("rendering_path")]
+        public string RenderingPath { get; set; }
+        [JsonProperty("rendering_id")]
+        public string RenderingID { get; set; }
+        [JsonProperty("datasource_path")]
+        public string DatasourcePath { get; set; }
+        [JsonProperty("datasource_id")]
+        public string DatasourceID { get; set; }
     }
 }

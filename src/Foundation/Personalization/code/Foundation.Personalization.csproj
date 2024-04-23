@@ -310,19 +310,8 @@
     <Compile Include="Helpers\InlineScriptHelper.cs" />
     <Compile Include="Models\PersonalizedComponentImpressionModel.cs" />
     <Compile Include="Models\PersonalizedImpressionDataModel.cs" />
-    <Compile Include="Pipelines\CustomizeRendering.cs" />
-    <Compile Include="Pipelines\CustomizeRenderingProcessor.cs" />
     <Compile Include="Pipelines\Personalize.cs" />
-    <Compile Include="Rules\GetRenderingRulesPipeline.cs" />
-    <Compile Include="Rules\GetRenderingRulesArgs.cs" />
-    <Compile Include="Rules\RuleActionEventHandler.cs" />
-    <Compile Include="Rules\RuleAction.cs" />
-    <Compile Include="Rules\RuleExecutedEventHandler.cs" />
-    <Compile Include="Rules\RuleConditionEventHandler.cs" />
-    <Compile Include="Rules\RuleCondition.cs" />
-    <Compile Include="Rules\Rule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rules\RulesList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
