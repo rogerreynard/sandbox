@@ -39,46 +39,48 @@ namespace Foundation.Personalization.Pipelines
             ApplyActions(args, renderingsRuleContext);
             args.IsCustomized = true;
 
-            var personalizedComponentViewModelList = new List<PersonalizedImpressionDataModel>();
+            var renderingPath = renderingReference.RenderingItem.InnerItem.Paths.FullPath;
+            var dataSource = renderingReference.Settings.DataSource;
 
+            var personalizedComponentViewModel = new PersonalizedImpressionDataModel
+            {
+                ComponentName = args.Rendering.RenderingItem.Name,
+                RenderingPath = renderingPath.Substring(renderingPath.ToLower().LastIndexOf("renderings", StringComparison.Ordinal) + "renderings".Length),
+                RenderingID = args.Rendering.RenderingItem.ID.ToShortID().ToString(),
+                DatasourcePath = dataSource.Substring(dataSource.ToLower().LastIndexOf("content", StringComparison.Ordinal) + "content".Length),
+                DatasourceID = args.Rendering.Item.ID.ToShortID().ToString()
+            };
+
+            var rulesList = new List<RuleDataModel>();
             var order = 1;
             foreach (var rule in ruleList.Rules)
             {
-                var renderingPath = renderingReference.RenderingItem.InnerItem.Paths.FullPath;
-                var dataSource = renderingReference.Settings.DataSource;
-
-                var personalizedComponentViewModel = new PersonalizedImpressionDataModel
+                var ruleDataModel = new RuleDataModel
                 {
-                    ComponentName = args.Rendering.RenderingItem.Name,
                     RuleName = rule.Name,
                     RuleOrder = order.ToString(),
-                    ActionState = GetActionState(rule),
-                    RenderingPath = renderingPath.Substring(renderingPath.ToLower().LastIndexOf("renderings", StringComparison.Ordinal) + "renderings".Length),
-                    RenderingID = args.Rendering.RenderingItem.ID.ToShortID().ToString(),
-                    DatasourcePath = dataSource.Substring(dataSource.ToLower().LastIndexOf("content", StringComparison.Ordinal) + "content".Length),
-                    DatasourceID = args.Rendering.Item.ID.ToShortID().ToString()
+                    ActionState = GetActionState(rule)
                 };
 
                 order++;
-                
-                personalizedComponentViewModelList.Add(personalizedComponentViewModel);
+
+                rulesList.Add(ruleDataModel);
             }
 
-            StringifyModels(personalizedComponentViewModelList);
+            personalizedComponentViewModel.Rules = rulesList;
+
+            StringifyModel(personalizedComponentViewModel);
         }
 
-        private static void StringifyModels(IReadOnlyCollection<PersonalizedImpressionDataModel> models)
+        private static void StringifyModel(PersonalizedImpressionDataModel model)
         {
-            foreach (var model in models)
-            {
-                var keySuffix = model.ComponentName + model.RuleOrder + model.DatasourceID;
+            var keySuffix = model.ComponentName + model.DatasourceID;
 
-                var script = JsonConvert.SerializeObject(model);
+            var script = JsonConvert.SerializeObject(model);
 
-                InlineScriptHelper.AddScript("Personalization_" + keySuffix, script);
-                
-                Log.Info($"Personalization: {model.ComponentName} - {model.RuleName} - {model.ActionState} - {model.RenderingPath} - {model.DatasourcePath} - {model.DatasourceID}", typeof(Personalize));
-            }
+            InlineScriptHelper.AddScript("Personalization_" + keySuffix, script);
+
+            Log.Info($"Personalization: {model.ComponentName} - {model.RenderingPath} - {model.DatasourcePath} - {model.DatasourceID}", typeof(Personalize));
         }
 
         private static string GetActionState(Rule<ConditionalRenderingsRuleContext> rule)

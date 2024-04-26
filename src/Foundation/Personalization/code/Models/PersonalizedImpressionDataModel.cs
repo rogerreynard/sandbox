@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Foundation.Personalization.Models
@@ -8,12 +9,6 @@ namespace Foundation.Personalization.Models
     {
         [JsonProperty("component_name")]
         public string ComponentName { get; set; }
-        [JsonProperty("rule_name")]
-        public string RuleName { get; set; }
-        [JsonProperty("rule_order")]
-        public string RuleOrder { get; set; }
-        [JsonProperty("action_state")]
-        public string ActionState { get; set; }
         [JsonProperty("rendering_path")]
         public string RenderingPath { get; set; }
         [JsonProperty("rendering_id")]
@@ -22,5 +17,7 @@ namespace Foundation.Personalization.Models
         public string DatasourcePath { get; set; }
         [JsonProperty("datasource_id")]
         public string DatasourceID { get; set; }
+        [JsonProperty("rules")]
+        public List<RuleDataModel> Rules { get; set; }
     }
 }

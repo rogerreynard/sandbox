@@ -309,6 +309,7 @@
   <ItemGroup>
     <Compile Include="Helpers\InlineScriptHelper.cs" />
     <Compile Include="Models\PersonalizedComponentImpressionModel.cs" />
+    <Compile Include="Models\RuleDataModel.cs" />
     <Compile Include="Models\PersonalizedImpressionDataModel.cs" />
     <Compile Include="Pipelines\Personalize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
