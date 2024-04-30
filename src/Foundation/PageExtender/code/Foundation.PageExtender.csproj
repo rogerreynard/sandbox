@@ -156,7 +156,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\GoogleTagManagerDataLayerView.cshtml" />
+    <Content Include="Views\Shared\GoogleTagManagerDataLayerView.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Config\Include\Foundation.PageExtender.config" />
     <None Include="Properties\PublishProfiles\Publish to cm.rba.local.pubxml" />
     <None Include="Web.config" />
