@@ -17,3 +17,8 @@ bin/
 obj/
 /src/Foundation/Personalization/code/Properties/PublishProfiles/Publish to cm.rba.local.pubxml.user
 /src/Project/Website/code/Properties/PublishProfiles/Publish to cm.rba.local.pubxml.user
+*.json
+*.user
+*.pubxml
+/sandbox.sln
+/sandbox.sln.DotSettings.user

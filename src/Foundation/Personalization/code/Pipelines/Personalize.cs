@@ -59,7 +59,7 @@ namespace Foundation.Personalization.Pipelines
                 {
                     RuleName = rule.Name,
                     RuleOrder = order.ToString(),
-                    ActionState = GetActionState(rule)
+                    ActionState = GetActionState(rule),
                 };
 
                 order++;

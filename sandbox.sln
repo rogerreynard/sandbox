@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Gen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation.Personalization", "src\Foundation\Personalization\code\Foundation.Personalization.csproj", "{577ED977-C263-4343-A912-93887456FBFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation.PageExtender", "src\Foundation\PageExtender\code\Foundation.PageExtender.csproj", "{35AEE9CA-ED89-44BD-9A75-BDC6ABCD687D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{577ED977-C263-4343-A912-93887456FBFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{577ED977-C263-4343-A912-93887456FBFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{577ED977-C263-4343-A912-93887456FBFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35AEE9CA-ED89-44BD-9A75-BDC6ABCD687D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35AEE9CA-ED89-44BD-9A75-BDC6ABCD687D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35AEE9CA-ED89-44BD-9A75-BDC6ABCD687D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35AEE9CA-ED89-44BD-9A75-BDC6ABCD687D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{32970640-DA4C-4646-A55C-FF3EE037B779} = {E036128F-4F06-4111-BDC7-783342B71545}
 		{01D3F301-B828-4F3F-8E0C-B463ECCFCAE8} = {985427A4-8718-4994-A8BB-E99EF6D618B7}
 		{577ED977-C263-4343-A912-93887456FBFD} = {985427A4-8718-4994-A8BB-E99EF6D618B7}
+		{35AEE9CA-ED89-44BD-9A75-BDC6ABCD687D} = {985427A4-8718-4994-A8BB-E99EF6D618B7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A48F66B-9F33-4EB9-8A43-C1DF9487A400}

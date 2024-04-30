@@ -12,5 +12,7 @@ namespace Foundation.Personalization.Models
         public string RuleOrder { get; set; }
         [JsonProperty("action_state")]
         public string ActionState { get; set; }
+        [JsonProperty("is_applied")]
+        public string IsApplied { get; set; }
     }
 }
