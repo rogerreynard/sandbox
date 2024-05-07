@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Foundation.PageExtender.Models
@@ -6,6 +7,8 @@ namespace Foundation.PageExtender.Models
     [Serializable]
     public class PersonalizedImpressionDataModel
     {
+        [JsonProperty("user_name")]
+        public string UserName { get; set; }
         [JsonProperty("rendering_name")]
         public string RenderingName { get; set; }
         [JsonProperty("rendering_path")]
@@ -17,8 +20,10 @@ namespace Foundation.PageExtender.Models
         [JsonProperty("rendering_state")]
         public string RenderingState { get; set; }
         [JsonProperty("datasource_path")]
-        public string DatasourcePath { get; set; }
+        public string DataSourcePath { get; set; }
         [JsonProperty("datasource_id")]
-        public string DatasourceID { get; set; }
+        public string DataSourceID { get; set; }
+        [JsonProperty("card_list")]
+        public List<HasPatternConditionModel> CardList { get; set; }
     }
 }

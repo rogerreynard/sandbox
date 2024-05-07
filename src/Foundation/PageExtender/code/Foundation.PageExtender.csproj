@@ -164,6 +164,7 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\HasPatternConditionModel.cs" />
     <Compile Include="Models\PersonalizedComponentImpressionModel.cs" />
     <Compile Include="Models\PersonalizedImpressionDataModel.cs" />
     <Compile Include="Pipelines\PageExtender.RenderPageExtenders\GoogleTagManagerDataLayerRenderPageExtender.cs" />

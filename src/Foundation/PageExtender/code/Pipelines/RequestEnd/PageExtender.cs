@@ -12,19 +12,16 @@ namespace Foundation.PageExtender.Pipelines.RequestEnd
             if (Context.Site == null) return;
 
             var pageContext = args.PageContext;
-            if (pageContext == null) return;
+
+            if (pageContext?.Item == null) return;
 
             if (!Context.PageMode.IsNormal || Context.PageMode.IsExperienceEditor || Context.PageMode.IsExperienceEditorEditing ||
-                    Context.PageMode.IsPreview || Context.PageMode.IsProfiling)
-            {
+                Context.PageMode.IsPreview || Context.PageMode.IsProfiling)
                 return;
-            }
 
             var requestContext = pageContext.RequestContext;
             var filter = requestContext.HttpContext.Response.Filter;
             if (filter == null) return;
-
-            if (args.PageContext.Item == null) return;
 
             var pageExtenderResponseFilter = new PageExtenderResponseFilter(filter);
             if (pageExtenderResponseFilter.ExtendersHtml.IsWhiteSpaceOrNull()) return;

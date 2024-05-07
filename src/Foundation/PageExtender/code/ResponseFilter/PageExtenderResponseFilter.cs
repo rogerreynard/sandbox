@@ -116,8 +116,6 @@ namespace Foundation.PageExtender.ResponseFilter
         protected virtual string AddExtendersHtml(string html)
         {
             Sitecore.Diagnostics.Assert.ArgumentNotNull(html, "html");
-            //var regex = new Regex("(<BODY\\b[^>]*?>)", RegexOptions.IgnoreCase);
-           // html = regex.Replace(html, "$1" + ExtendersHtml, 1);
             var regex = new Regex("(</BODY>)", RegexOptions.IgnoreCase);
             html = regex.Replace(html, ExtendersHtml + "\n$1", 1);
             return html;
@@ -127,7 +125,7 @@ namespace Foundation.PageExtender.ResponseFilter
         {
             var htmlTextWriter = new HtmlTextWriter(new StringWriter());
             var renderPageExtendersArgs = new RenderPageExtendersArgs(htmlTextWriter);
-            PipelineService.Get().RunPipeline<RenderPageExtendersArgs>("PageExtender.RenderPageExtenders", renderPageExtendersArgs);
+            PipelineService.Get().RunPipeline("PageExtender.RenderPageExtenders", renderPageExtendersArgs);
             return !renderPageExtendersArgs.IsRendered ? string.Empty : htmlTextWriter.InnerWriter.ToString();
         }
 
