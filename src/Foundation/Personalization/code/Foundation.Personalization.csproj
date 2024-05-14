@@ -65,6 +65,10 @@
       <HintPath>..\..\..\..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Sitecore.Analytics, Version=18.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.10.3.1\lib\net48\Sitecore.Analytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Sitecore.Buckets, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Buckets.10.3.1\lib\net48\Sitecore.Buckets.dll</HintPath>
       <Private>False</Private>
@@ -308,8 +312,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\InlineScriptHelper.cs" />
+    <Compile Include="Models\HasPatternConditionModel.cs" />
     <Compile Include="Models\PersonalizedComponentImpressionModel.cs" />
-    <Compile Include="Models\RuleDataModel.cs" />
     <Compile Include="Models\PersonalizedImpressionDataModel.cs" />
     <Compile Include="Pipelines\Personalize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

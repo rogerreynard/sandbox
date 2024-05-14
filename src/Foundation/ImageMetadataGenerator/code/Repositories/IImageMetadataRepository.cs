@@ -2,7 +2,7 @@
 {
     using Models;
 
-    public interface IImageMetadataGeneratorRepository
+    public interface IImageMetadataRepository
     {
         IChatGptVisionApiSettingsItem GetSettings();
     }

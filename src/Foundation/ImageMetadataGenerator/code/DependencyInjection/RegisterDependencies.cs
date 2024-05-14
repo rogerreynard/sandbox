@@ -9,7 +9,7 @@ namespace Foundation.ImageMetadataGenerator.DependencyInjection
     {
         public void Configure(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddTransient<IImageMetadataGeneratorRepository, ImageMetadataRepository>();
+            serviceCollection.AddTransient<IImageMetadataRepository, ImageMetadataRepository>();
             serviceCollection.AddTransient<ImageMetadataGeneratorController>();
         }
     }

@@ -5,7 +5,7 @@ using Sitecore.Data.Items;
 namespace Foundation.ImageMetadataGenerator.Repositories
 {
     using Models;
-    public class ImageMetadataRepository : IImageMetadataGeneratorRepository
+    public class ImageMetadataRepository : IImageMetadataRepository
     {
         private readonly ID _settingsId = new ID("{5D4DEFBD-2E66-48FA-A6AF-99A6F3C06A6D}");
 

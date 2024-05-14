@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+	<GenerateMetadataForImages>
+		<Stylesheet Src="/sitecore/shell/Applications/Dialogs/ImageMetadataGenerator/GenerateMetadataForImages.css"></Stylesheet>
+		<Script Src="/sitecore/shell/Applications/Dialogs/ImageMetadataGenerator/GenerateMetadataForImages.js"></Script>
+		<FormDialog Icon="Office/32x32/atom2.png" Header="Generate Metadata For Images"
+				Text="Generate alt text and description for one or more images."
+				OKButton="Generate Metadata For Images">
+			<CodeBeside Type="Foundation.ImageMetadataGenerator.Dialogs.GenerateMetadataForImagesForm,Foundation.ImageMetadataGenerator"/>   
+			<DataContext ID="MediaDataContext" Root="{3D6658D8-A0BF-4E75-B3E2-D050FABCF4E1}"/>
+			<div class="scStretch">
+				<div class="col2">
+					<Scrollbox Border="1px solid #CFCFCF">
+						<TreeviewEx ID="MediaTreeView" Style="padding-top: 10px" DataContext="MediaDataContext" Click="SelectTreeNode" DblClick="OnOpen" ContextMenu='MediaTreeView.GetContextMenu("contextmenu")' />
+					</Scrollbox>
+				</div>
+				<div class="col2">
+
+					<Border ID="Preview" Align="Center" Padding="4px" Background="white"/>
+
+					<Border Background="transparent" Border="none" GridPanel.VAlign="top" Padding="4px 0px 0px 0px">
+						<GridPanel Class="image-metadata-table" CellPadding="2" Columns="2" Width="100%">
+							<Literal Text="Selected Item:" />
+							<Literal ID="SelectedItem" />
+							<Literal Text="Selected Item Path:" />
+							<Literal ID="SelectedItemPath" />
+							<Literal Text="Overwrite existing alt text and description?" />
+							<Checkbox ID="OverwriteExisting" />
+						</GridPanel>
+					</Border>
+
+				</div>
+
+			</div>
+			
+		</FormDialog>
+	</GenerateMetadataForImages>
+</control>

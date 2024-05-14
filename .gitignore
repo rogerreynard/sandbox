@@ -22,3 +22,4 @@ obj/
 *.pubxml
 /sandbox.sln
 /sandbox.sln.DotSettings.user
+/src/Foundation/ImageMetadataGenerator/code/.vs/Foundation.ImageMetadataGenerator.csproj.dtbcache.json

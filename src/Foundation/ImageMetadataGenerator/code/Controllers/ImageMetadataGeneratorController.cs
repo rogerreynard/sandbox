@@ -14,9 +14,9 @@ namespace Foundation.ImageMetadataGenerator.Controllers
 
     public class ImageMetadataGeneratorController : ApiController
     {
-        private readonly IImageMetadataGeneratorRepository _repo;
+        private readonly IImageMetadataRepository _repo;
         
-        public ImageMetadataGeneratorController(IImageMetadataGeneratorRepository repo)
+        public ImageMetadataGeneratorController(IImageMetadataRepository repo)
         {
             _repo = repo;
         }

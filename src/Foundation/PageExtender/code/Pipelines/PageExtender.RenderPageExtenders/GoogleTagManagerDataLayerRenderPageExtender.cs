@@ -1,4 +1,5 @@
-﻿using Foundation.PageExtender.Models;
+﻿using System;
+using Foundation.PageExtender.Models;
 using Foundation.PageExtender.Pipelines.RequestEnd;
 using Sitecore;
 using Sitecore.Analytics;
@@ -13,6 +14,9 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Sitecore.Analytics.Rules.Conditions;
 using Sitecore.Rules.Conditions;
+using System.Xml;
+using Sitecore.Data.Fields;
+using Newtonsoft.Json;
 
 namespace Foundation.PageExtender.Pipelines.PageExtender.RenderPageExtenders
 {
@@ -33,70 +37,88 @@ namespace Foundation.PageExtender.Pipelines.PageExtender.RenderPageExtenders
 
         private bool Render(TextWriter writer)
         {
-            var appliedPersonalizations = new List<PersonalizedImpressionDataModel>();
-            IList<PersonalizationRuleData> exposedRules = null;
+            //var appliedPersonalizations = new List<PersonalizedImpressionDataModel>();
+            //IList<PersonalizationRuleData> exposedRules = null;
 
-            if (Tracker.Current != null && Tracker.Enabled && Tracker.Current.CurrentPage != null && Tracker.Current.CurrentPage.Personalization != null)
+            //var finalRenderingsField = (LayoutField)Context.Item.Fields[FieldIDs.FinalLayoutField];
+            //var fieldXml = finalRenderingsField?.Value;
+
+            //if (!string.IsNullOrEmpty(fieldXml))
+            //{
+            //    var xmlDocument = new XmlDocument();
+            //    xmlDocument.LoadXml(fieldXml);
+
+            //    var hasPersonalization = xmlDocument.SelectNodes("//rule[actions/action and conditions/condition]")?.Count > 0;
+            //}
+
+            //if (Tracker.Current != null && Tracker.Enabled && Tracker.Current.CurrentPage != null && Tracker.Current.CurrentPage.Personalization != null)
+            //{
+            //    var personalization = Tracker.Current.CurrentPage.Personalization;
+            //    exposedRules = personalization.ExposedRules;
+            //}
+
+            //if (exposedRules != null)
+            //{
+            //    if (exposedRules.Any())
+            //    {
+            //        if (Context.Device != null)
+            //        {
+            //            var renderingReferences = Context.Item.Visualization.GetRenderings(Context.Device, true);
+            //            if (renderingReferences != null)
+            //            {
+            //                foreach (var renderingReference in renderingReferences)
+            //                {
+            //                    if (renderingReference.Settings.Rules?.Rules == null) continue;
+
+            //                    var ruleList = renderingReference.Settings.Rules;
+
+            //                    var renderingReferenceRules = renderingReference.Settings.Rules.Rules.ToList();
+
+            //                    if (!renderingReferenceRules.Any()) continue;
+
+            //                    var model = new PersonalizedImpressionDataModel
+            //                    {
+            //                        UserName = Context.GetUserName(),
+            //                        RenderingName = renderingReference.RenderingItem?.DisplayName ?? string.Empty,
+            //                        RenderingPath = renderingReference.RenderingItem?.InnerItem?.Paths.FullPath.Replace("/sitecore/layout/Renderings", string.Empty) ?? string.Empty,
+            //                        RenderingID = renderingReference.RenderingID.ToShortID().ToString()
+            //                    };
+
+            //                    if (renderingReferenceRules.Any())
+            //                    {
+            //                        var appliedRule =
+            //                        (
+            //                            from rules in renderingReferenceRules
+            //                            join exp in exposedRules
+            //                                on rules.UniqueId equals exp.RuleId
+            //                            select rules
+            //                        ).FirstOrDefault();
+
+            //                        var dataSourcePath = GetDataSourcePath(appliedRule);
+
+            //                        if (appliedRule != null)
+            //                        {
+            //                            model.DataSourcePath = dataSourcePath.Replace("/sitecore/content", string.Empty);
+            //                            model.DataSourceID = Context.Database.GetItem(dataSourcePath)?.ID.ToShortID().ToString();
+            //                            model.RuleName = appliedRule.Name;
+            //                            model.RenderingState = GetRenderingState(appliedRule);
+            //                            model.CardList = GetHasPatternConditionModelList(appliedRule.Condition);
+            //                        }
+            //                    }
+
+            //                    appliedPersonalizations.Add(model);
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+
+            var models = (Dictionary<string, string>)HttpContext.Current.Items["Personalization"];
+
+            if (models != null && models.Any())
             {
-                var personalization = Tracker.Current.CurrentPage.Personalization;
-                exposedRules = personalization.ExposedRules;
+                RenderPersonalizationPartial(writer, models.Select(m => JsonConvert.DeserializeObject<PersonalizedImpressionDataModel>(m.Value)).ToList());
             }
-
-            if (exposedRules != null)
-            {
-                if (exposedRules.Any())
-                {
-                    if (Context.Device != null)
-                    {
-                        var renderingReferences = Context.Item.Visualization.GetRenderings(Context.Device, true);
-                        if (renderingReferences != null)
-                        {
-                            foreach (var renderingReference in renderingReferences)
-                            {
-                                if (renderingReference.Settings.Rules?.Rules == null) continue;
-
-                                var renderingReferenceRules = renderingReference.Settings.Rules.Rules.ToList();
-
-                                if (!renderingReferenceRules.Any()) continue;
-
-                                var model = new PersonalizedImpressionDataModel
-                                {
-                                    UserName = Context.GetUserName(),
-                                    RenderingName = renderingReference.RenderingItem?.DisplayName ?? string.Empty,
-                                    RenderingPath = renderingReference.RenderingItem?.InnerItem?.Paths.FullPath.Replace("/sitecore/layout/Renderings", string.Empty) ?? string.Empty,
-                                    RenderingID = renderingReference.RenderingID.ToShortID().ToString()
-                                };
-
-                                if (renderingReferenceRules.Any())
-                                {
-                                    var appliedRule =
-                                    (
-                                        from rules in renderingReferenceRules
-                                        join exp in exposedRules
-                                            on rules.UniqueId equals exp.RuleId
-                                        select rules
-                                    ).FirstOrDefault();
-
-                                    var dataSourcePath = GetDataSourcePath(appliedRule);
-
-                                    if (appliedRule != null)
-                                    {
-                                        model.DataSourcePath = dataSourcePath.Replace("/sitecore/content", string.Empty);
-                                        model.DataSourceID = Context.Database.GetItem(dataSourcePath)?.ID.ToShortID().ToString();
-                                        model.RuleName = appliedRule.Name;
-                                        model.RenderingState = GetRenderingState(appliedRule);
-                                        model.CardList = GetHasPatternConditionModelList(appliedRule.Condition);
-                                    }
-                                }
-
-                                appliedPersonalizations.Add(model);
-                            }
-                        }
-                    }
-                }
-            }
-
-            RenderPersonalizationPartial(writer, appliedPersonalizations);
 
             return true;
         }

@@ -1,0 +1,8 @@
+﻿.image-metadata-table > tbody > tr > td:first-child {
+    text-align: right;
+    padding-right: 10px;
+}
+
+/*.image-metadata-table > tbody > tr > td:last-child {
+    text-align: left;
+}*/

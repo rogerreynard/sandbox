@@ -8,14 +8,18 @@ using Foundation.Personalization.Models;
 using Sitecore;
 using Sitecore.Personalization.Mvc.Pipelines.Response.CustomizeRendering;
 using Sitecore.Personalization.Pipelines.GetRenderingRules;
-using Foundation.Personalization.Helpers;
 using Newtonsoft.Json;
 using Sitecore.Rules;
+using Sitecore.Analytics.Rules.Conditions;
+using Sitecore.Rules.Conditions;
+using System.Web;
 
 namespace Foundation.Personalization.Pipelines
 {
     public class Personalize : Sitecore.Personalization.Mvc.Pipelines.Response.CustomizeRendering.Personalize
     {
+        private readonly List<Rule<ConditionalRenderingsRuleContext>> _rulesExecuted = new List<Rule<ConditionalRenderingsRuleContext>>();
+
         protected override void Evaluate(CustomizeRenderingArgs args)
         {
             Assert.ArgumentNotNull(args, nameof(args));
@@ -25,9 +29,13 @@ namespace Foundation.Personalization.Pipelines
             var renderingReference = GetRenderingReference(args.Rendering, Context.Language, args.PageContext.Database);
             var args1 = new GetRenderingRulesArgs(obj, renderingReference);
             GetRenderingRulesPipeline.Run(args1);
+
             var ruleList = args1.RuleList;
             if (ruleList == null || ruleList.Count == 0)
                 return;
+
+            SubscribeToExecutedEvent(ruleList);
+
             var renderingsRuleContext =
                 new ConditionalRenderingsRuleContext(new List<RenderingReference> { renderingReference }, renderingReference)
                 {
@@ -39,57 +47,93 @@ namespace Foundation.Personalization.Pipelines
             ApplyActions(args, renderingsRuleContext);
             args.IsCustomized = true;
 
-            var renderingPath = renderingReference.RenderingItem.InnerItem.Paths.FullPath;
-            var dataSource = renderingReference.Settings.DataSource;
+            var appliedRule = ruleList.Rules.FirstOrDefault(rul => _rulesExecuted.Any(r => r.UniqueId == rul.UniqueId));
+            if (appliedRule == null) return;
 
-            var personalizedComponentViewModel = new PersonalizedImpressionDataModel
+            var renderingPath = renderingReference.RenderingItem.InnerItem.Paths.FullPath;
+
+            var model = new PersonalizedImpressionDataModel
             {
-                ComponentName = args.Rendering.RenderingItem.Name,
+                UserName = Context.GetUserName(),
+                RenderingName = args.Rendering.RenderingItem.Name,
                 RenderingPath = renderingPath.Substring(renderingPath.ToLower().LastIndexOf("renderings", StringComparison.Ordinal) + "renderings".Length),
                 RenderingID = args.Rendering.RenderingItem.ID.ToShortID().ToString(),
-                DatasourcePath = dataSource.Substring(dataSource.ToLower().LastIndexOf("content", StringComparison.Ordinal) + "content".Length),
-                DatasourceID = args.Rendering.Item.ID.ToShortID().ToString()
             };
 
-            var rulesList = new List<RuleDataModel>();
-            var order = 1;
-            foreach (var rule in ruleList.Rules)
-            {
-                var ruleDataModel = new RuleDataModel
-                {
-                    RuleName = rule.Name,
-                    RuleOrder = order.ToString(),
-                    ActionState = GetActionState(rule),
-                };
+            var dataSourcePath = args.Rendering.DataSource;
 
-                order++;
+            dataSourcePath = GetDataSourcePath(dataSourcePath, appliedRule);
 
-                rulesList.Add(ruleDataModel);
-            }
+            model.DataSourcePath = dataSourcePath.Replace("/sitecore/content", string.Empty);
+            model.DataSourceID = Context.Database.GetItem(dataSourcePath)?.ID.ToShortID().ToString();
+            model.RuleName = appliedRule.Name;
+            model.RenderingState = GetRenderingState(appliedRule);
+            model.CardList = GetHasPatternConditionModelList(appliedRule.Condition);
 
-            personalizedComponentViewModel.Rules = rulesList;
-
-            StringifyModel(personalizedComponentViewModel);
+            AddModelToSession("Rule_" + renderingReference.RenderingID.ToShortID(), model);
         }
 
-        private static void StringifyModel(PersonalizedImpressionDataModel model)
+        public void SubscribeToExecutedEvent(RuleList<ConditionalRenderingsRuleContext> ruleList)
         {
-            var keySuffix = model.ComponentName + model.DatasourceID;
-
-            var script = JsonConvert.SerializeObject(model);
-
-            InlineScriptHelper.AddScript("Personalization_" + keySuffix, script);
-
-            Log.Info($"Personalization: {model.ComponentName} - {model.RenderingPath} - {model.DatasourcePath} - {model.DatasourceID}", typeof(Personalize));
+            ruleList.Executed += RuleList_Executed;
         }
 
-        private static string GetActionState(Rule<ConditionalRenderingsRuleContext> rule)
+        private void RuleList_Executed(RuleList<ConditionalRenderingsRuleContext> ruleList, ConditionalRenderingsRuleContext ruleContext, Rule<ConditionalRenderingsRuleContext> rule)
         {
-            return rule.Actions != null &&
-                   rule.Actions.Any() &&
-                   rule.Actions[0].GetType().Name.ToLower().Contains("hide")
+            _rulesExecuted.Add(rule);
+        }
+
+        private static void AddModelToSession(string key, PersonalizedImpressionDataModel model)
+        {
+            if (HttpContext.Current.Items["Personalization"] == null)
+                HttpContext.Current.Items["Personalization"] = new Dictionary<string, string>();
+
+            var dictionary = (Dictionary<string, string>)HttpContext.Current.Items["Personalization"] ?? new Dictionary<string, string>();
+
+            //var dictionary = (Dictionary<string, string>)HttpContext.Current.Items["Personalization"];
+            if(!dictionary.ContainsKey(key))
+                dictionary.Add(key, JsonConvert.SerializeObject(model));
+
+            HttpContext.Current.Items["Personalization"] = dictionary;
+        }
+
+        private static string GetRenderingState(Rule<ConditionalRenderingsRuleContext> rule)
+        {
+            return rule?.Actions != null &&
+                   rule.Actions.Any(act => act is HideRenderingAction<ConditionalRenderingsRuleContext>)
                 ? "hide"
                 : "show";
+        }
+
+        private static string GetDataSourcePath(string path, Rule<ConditionalRenderingsRuleContext> rule)
+        {
+            var dataSource = rule?.Actions?.OfType<SetDataSourceAction<ConditionalRenderingsRuleContext>>().FirstOrDefault()?.DataSource ?? path;
+            return dataSource.Contains("local:") ? Context.Item.Paths.FullPath + dataSource.Replace("local:", "") : dataSource;
+        }
+
+        private static List<HasPatternConditionModel> GetHasPatternConditionModelList(RuleCondition<ConditionalRenderingsRuleContext> ruleCondition)
+        {
+            var list = new List<HasPatternConditionModel>();
+            switch (ruleCondition)
+            {
+                case HasPatternCondition<ConditionalRenderingsRuleContext> condition:
+                    list.Add(new HasPatternConditionModel
+                    {
+                        PatternName = condition.PatternName,
+                        ProfileName = condition.ProfileName
+                    });
+                    break;
+
+                case UnaryCondition<ConditionalRenderingsRuleContext> condition:
+                    list.AddRange(GetHasPatternConditionModelList(condition.Operand));
+                    break;
+
+                case BinaryCondition<ConditionalRenderingsRuleContext> condition:
+                    list.AddRange(GetHasPatternConditionModelList(condition.LeftOperand));
+                    list.AddRange(GetHasPatternConditionModelList(condition.RightOperand));
+                    break;
+            }
+            return list;
         }
     }
 }
