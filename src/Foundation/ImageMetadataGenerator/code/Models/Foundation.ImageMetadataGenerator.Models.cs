@@ -10,9 +10,11 @@ namespace Foundation.ImageMetadataGenerator.Models
 	public interface IChatGptVisionApiSettingsItem
 	{
 		TextField ApiKeyField { get; }
+		CheckboxField DefaultOverwriteExistingField { get; }
 		ReferenceField DetailField { get; }
 		TextField MaxTokensField { get; }
 		TextField ModelField { get; }
+		ReferenceField ScopeField { get; }
 		TextField UrlField { get; }
 	}
 	[GeneratedCode("Leprechaun", "2.2.4.0")]
@@ -26,9 +28,11 @@ namespace Foundation.ImageMetadataGenerator.Models
 		public static ID ItemTemplateId => new ID("{ACB5AC0F-FDC8-43F2-840F-69F0B069E32A}");
 		
 		public TextField ApiKeyField => new TextField(InnerItem.Fields[FieldConstants.ApiKey.Id]);
+		public CheckboxField DefaultOverwriteExistingField => new CheckboxField(InnerItem.Fields[FieldConstants.DefaultOverwriteExisting.Id]);
 		public ReferenceField DetailField => new ReferenceField(InnerItem.Fields[FieldConstants.Detail.Id]);
 		public TextField MaxTokensField => new TextField(InnerItem.Fields[FieldConstants.MaxTokens.Id]);
 		public TextField ModelField => new TextField(InnerItem.Fields[FieldConstants.Model.Id]);
+		public ReferenceField ScopeField => new ReferenceField(InnerItem.Fields[FieldConstants.Scope.Id]);
 		public TextField UrlField => new TextField(InnerItem.Fields[FieldConstants.Url.Id]);
 		public static implicit operator ChatGptVisionApiSettings(Item item) => item != null ? new ChatGptVisionApiSettings(item) : null;
 		public static implicit operator Item(ChatGptVisionApiSettings customItem) => customItem?.InnerItem;
@@ -38,6 +42,11 @@ namespace Foundation.ImageMetadataGenerator.Models
             {
 		        public const string FieldName = "API Key";
 		        public static readonly ID Id = new ID("{DEBB95EC-D1E1-456A-9DA2-2A502D32C8A0}");
+            }
+            public struct DefaultOverwriteExisting
+            {
+		        public const string FieldName = "Default Overwrite Existing";
+		        public static readonly ID Id = new ID("{DD398FE3-C17C-4A50-9D2E-3F394221BB64}");
             }
             public struct Detail
             {
@@ -53,6 +62,11 @@ namespace Foundation.ImageMetadataGenerator.Models
             {
 		        public const string FieldName = "Model";
 		        public static readonly ID Id = new ID("{36C7EF02-4A04-4DA6-B15A-DB2471C363C4}");
+            }
+            public struct Scope
+            {
+		        public const string FieldName = "Scope";
+		        public static readonly ID Id = new ID("{A6CFBA84-F847-4631-98E2-791BD596A913}");
             }
             public struct Url
             {

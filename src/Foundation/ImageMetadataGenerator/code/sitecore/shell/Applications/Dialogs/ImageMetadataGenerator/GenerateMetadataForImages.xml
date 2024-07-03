@@ -11,7 +11,7 @@
 			<div class="scStretch">
 				<div class="col2">
 					<Scrollbox Border="1px solid #CFCFCF">
-						<TreeviewEx ID="MediaTreeView" Style="padding-top: 10px" DataContext="MediaDataContext" Click="SelectTreeNode" DblClick="OnOpen" ContextMenu='MediaTreeView.GetContextMenu("contextmenu")' />
+						<TreeviewEx ID="MediaTreeView" Style="padding-top: 10px" DataContext="MediaDataContext" Click="SelectTreeNode" />
 					</Scrollbox>
 				</div>
 				<div class="col2">
@@ -26,6 +26,16 @@
 							<Literal ID="SelectedItemPath" />
 							<Literal Text="Overwrite existing alt text and description?" />
 							<Checkbox ID="OverwriteExisting" />
+							<Label for="Scope" GridPanel.NoWrap="true">
+								<Literal Text="Scope:"/>
+							</Label>
+							<Combobox ID="Scope" Width="100%">
+								<ListItem Value="Root" Header="Root"/>
+								<ListItem Value="Children Only" Header="Children Only"/>
+								<ListItem Value="Root and Children" Header="Root and Children"/>
+								<ListItem Value="Descendants Only" Header="Descendants Only"/>
+								<ListItem Value="Root and Descendants" Header="Root and Descendants"/>
+							</Combobox>
 						</GridPanel>
 					</Border>
 

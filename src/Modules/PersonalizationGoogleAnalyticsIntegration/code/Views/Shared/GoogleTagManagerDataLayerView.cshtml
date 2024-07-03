@@ -1,0 +1,14 @@
+﻿@model Sitecore.PersonalizationGoogleAnalyticsIntegration.Models.PersonalizedComponentImpressionModel
+@using Newtonsoft.Json;
+
+@{
+    if (Model == null)
+    {
+        return;
+    }
+
+    <script>
+		window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(@Html.Raw(JsonConvert.SerializeObject(Model)));
+    </script>
+}

@@ -41,12 +41,21 @@ namespace Foundation.ImageMetadataGenerator.Utilities
             return part.Split(new[] { ": " }, 2, StringSplitOptions.None)[1];
         }
 
-        public static bool SaveMetadata(Item item, string altText, string description)
+        public static bool SaveMetadata(Item item, string altText, string description, bool overwriteExisting = true)
         {
             item.Editing.BeginEdit();
-            item.Fields["Alt"]?.SetValue(altText, true);
-            item.Fields["Description"]?.SetValue(description, true);
+
+            if (overwriteExisting || string.IsNullOrEmpty(item.Fields["Alt"]?.Value))
+            {
+                item.Fields["Alt"]?.SetValue(altText, true);
+            }
+            if (overwriteExisting || string.IsNullOrEmpty(item.Fields["Description"]?.Value))
+            {
+                item.Fields["Description"]?.SetValue(description, true);
+            }
+
             item.Editing.EndEdit();
+
             return true;
         }
 

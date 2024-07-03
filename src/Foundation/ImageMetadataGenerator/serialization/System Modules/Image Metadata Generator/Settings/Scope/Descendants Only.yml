@@ -2,7 +2,7 @@
 ID: "26c9c4a8-3320-42c6-b883-d0fb99461f48"
 Parent: "95b2a018-77d7-4d8c-9cb5-67aa80c1c54e"
 Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
-Path: /sitecore/system/Modules/Image Metadata Generator/Settings/Scope/All Descendants Only
+Path: /sitecore/system/Modules/Image Metadata Generator/Settings/Scope/Descendants Only
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
